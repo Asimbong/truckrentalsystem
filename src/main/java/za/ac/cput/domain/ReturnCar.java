@@ -2,25 +2,26 @@ package za.ac.cput.domain;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 /**
- * returnCar.java
+ * ReturnCar.java
  * This is the Domain program
- * @aurthor Thandolwethu Khoza (221797289)
+ * @author Thandolwethu Khoza (221797289)
  * Date: 18 March 2024
  */
-public class returnCar {
+public class ReturnCar {
     private String returnID;
     private int rentalID;
     private double overdueAmount;
     private LocalDate dateReturn;
     private LocalTime timeReturn;
 
-    public returnCar() {
+    public ReturnCar() {
 
     }
 
-    public returnCar(Builder builder) {
+    private ReturnCar(Builder builder) {
         this.returnID = builder.returnID;
         this.rentalID = builder.rentalID;
         this.overdueAmount = builder.overdueAmount;
@@ -47,6 +48,25 @@ public class returnCar {
     public LocalTime getTimeReturn() {
         return timeReturn;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReturnCar returnCar = (ReturnCar) o;
+        return returnID == returnCar.returnID
+                           && Objects.equals(rentalID, returnCar.rentalID)
+                           && Objects.equals(overdueAmount, returnCar.overdueAmount)
+                           && Objects.equals(dateReturn, returnCar.dateReturn)
+                           && Objects.equals(timeReturn, returnCar.timeReturn);
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(returnID, rentalID,overdueAmount,dateReturn, timeReturn);
+    }
+
 
     @Override
     public String toString() {
@@ -91,9 +111,17 @@ public class returnCar {
             this.timeReturn = timeReturn;
             return this;
         }
+        public Builder copy(ReturnCar returnCar){
+            this.returnID = returnCar.returnID;
+            this.rentalID = returnCar.rentalID;
+            this.overdueAmount = returnCar.overdueAmount;
+            this.dateReturn = returnCar.dateReturn;
+            this.timeReturn = returnCar.timeReturn;
+            return this;
+        }
 
-    public returnCar build() {
-        return new returnCar(this);
+    public ReturnCar build() {
+        return new ReturnCar(this);
         }
     }
 }
