@@ -9,7 +9,7 @@ import za.ac.cput.util.Helper;
  * Date: 20 March 2024
  */
 public class CustomerFactory {
-    public static Customer buildDriver(String firstName, String lastName, String email, String idNumber, String licenceNo, String telephoneNo, int rentalID) {
+    public static Customer buildCustomer(String firstName, String lastName, String email, String idNumber, String licenceNo, String telephoneNo, int rentalID) {
         if (Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) || Helper.isNullOrEmpty(idNumber)
                 || Helper.isNullOrEmpty(licenceNo) || Helper.isNullOrEmpty(telephoneNo) || Helper.isNullOrEmpty(String.valueOf(rentalID)))
             return null;
@@ -18,7 +18,7 @@ public class CustomerFactory {
                 .setTelephoneNo(telephoneNo).setRentalID(rentalID).build();
     }
 
-    public static Customer buildDriver(String firstName, String lastName, String email, int rentalID) {
+    public static Customer buildCustomer(String firstName, String lastName, String email, int rentalID) {
         if (Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(email) || Helper.isNullOrEmpty(String.valueOf(rentalID)))
             return null;
         String idNumber = Helper.generateId();
