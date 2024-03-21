@@ -1,13 +1,13 @@
 package za.ac.cput.domain;
 /**
- * Driver.java
+ * Customer.java
  * This is the Domain program
  * @aurthor Asimbonge Mbende (221090754)
  * Date: 16 March 2024
  */
 import java.util.Objects;
 
-public class Driver {
+public class Customer {
 
     private String firstName;
     private String lastName;
@@ -17,10 +17,10 @@ public class Driver {
     private String telephoneNo;
     private int rentalID;
 
-    public Driver() {
+    public Customer() {
     }
 
-    private Driver(Builder builder) {
+    private Customer(Builder builder) {
 
     }
 
@@ -56,8 +56,8 @@ public class Driver {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Driver driver = (Driver) o;
-        return rentalID == driver.rentalID && Objects.equals(firstName, driver.firstName) && Objects.equals(lastName, driver.lastName) && Objects.equals(email, driver.email) && Objects.equals(idNumber, driver.idNumber) && Objects.equals(licenceNo, driver.licenceNo) && Objects.equals(telephoneNo, driver.telephoneNo);
+        Customer customer = (Customer) o;
+        return rentalID == customer.rentalID && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(idNumber, customer.idNumber) && Objects.equals(licenceNo, customer.licenceNo) && Objects.equals(telephoneNo, customer.telephoneNo);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "Customer{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
@@ -122,19 +122,19 @@ public class Driver {
             return this;
         }
 
-        public Builder copy(Driver driver) {
-            this.firstName = driver.firstName;
-            this.lastName = driver.lastName;
-            this.email = driver.email;
-            this.idNumber = driver.idNumber;
-            this.licenceNo = driver.licenceNo;
-            this.telephoneNo = driver.telephoneNo;
-            this.rentalID = driver.rentalID;
+        public Builder copy(Customer customer) {
+            this.firstName = customer.firstName;
+            this.lastName = customer.lastName;
+            this.email = customer.email;
+            this.idNumber = customer.idNumber;
+            this.licenceNo = customer.licenceNo;
+            this.telephoneNo = customer.telephoneNo;
+            this.rentalID = customer.rentalID;
             return this;
         }
 
-        public Driver build() {
-            return new Driver(this);
+        public Customer build() {
+            return new Customer(this);
         }
     }
 }
