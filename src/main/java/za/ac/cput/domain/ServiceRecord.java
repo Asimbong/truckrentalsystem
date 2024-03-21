@@ -3,45 +3,53 @@ package za.ac.cput.domain;
 import java.util.Objects;
 
 public class ServiceRecord {
-    private static int VehicleID;
-    private static String ServiceDate;
-    private static String ServiceType;
-    private static String Description;
-    private static int Cost;
-    private static String Mechanic;
-    private static String NextServiceDate;
+    private static int vehicleID;
+    private static String serviceDate;
+    private static String serviceType;
+    private static String description;
+    private static int cost;
+    private static String mechanic;
+    private static String nextServiceDate;
 
-    public ServiceRecord(ServiceRecord serviceRecord) {
+    public ServiceRecord() {
     }
+
     private ServiceRecord(ServiceRecord.Builder builder) {
-        this.VehicleID = builder.VehicleID;
-        this.ServiceDate = builder.ServiceDate;
-        this.ServiceType = builder.ServiceType;
-        this.Description = builder.Description;
-        this.Cost = builder.Cost;
-        this.Mechanic = builder.Mechanic;
-        this.NextServiceDate = builder.NextServiceDate;
+        this.vehicleID = builder.vehicleID;
+        this.serviceDate = builder.serviceDate;
+        this.serviceType = builder.serviceType;
+        this.description = builder.description;
+        this.cost = builder.cost;
+        this.mechanic = builder.mechanic;
+        this.nextServiceDate = builder.nextServiceDate;
     }
+
     public int getVehicleID() {
-        return VehicleID;
+        return vehicleID;
     }
+
     public String getServiceType() {
-        return ServiceType;
+        return serviceType;
     }
+
     public String getServiceDate() {
-        return ServiceDate;
+        return serviceDate;
     }
+
     public String getDescription() {
-        return Description;
+        return description;
     }
+
     public int getCost() {
-        return Cost;
+        return cost;
     }
+
     public String getMechanic() {
-        return Mechanic;
+        return mechanic;
     }
+
     public String getNextServiceDate() {
-        return NextServiceDate;
+        return nextServiceDate;
     }
 
 
@@ -50,75 +58,92 @@ public class ServiceRecord {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ServiceRecord serviceRecord = (ServiceRecord) o;
-        return VehicleID == ServiceRecord.VehicleID && Objects.equals(ServiceDate, ServiceRecord.ServiceDate) && Objects.equals(ServiceType, ServiceRecord.ServiceType) && Objects.equals(Description, ServiceRecord.Description) && Objects.equals(Cost, ServiceRecord.Cost) && Objects.equals(Mechanic, ServiceRecord.Mechanic) && Objects.equals(NextServiceDate, ServiceRecord.NextServiceDate);
+        return vehicleID == ServiceRecord.vehicleID
+                && Objects.equals(serviceDate, ServiceRecord.serviceDate)
+                && Objects.equals(serviceType, ServiceRecord.serviceType)
+                && Objects.equals(description, ServiceRecord.description)
+                && Objects.equals(cost, ServiceRecord.cost)
+                && Objects.equals(mechanic, ServiceRecord.mechanic)
+                && Objects.equals(nextServiceDate, ServiceRecord.nextServiceDate);
     }
-        @Override
-        public int hashCode() {
-            return super.hashCode();
-        }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(vehicleID, serviceDate, serviceType, description, cost, mechanic, nextServiceDate);
+    }
 
     @Override
     public String toString() {
         return "ServiceRecord{" +
-                "VehicleID=" + VehicleID +
-                ", ServiceDate='" + ServiceDate + '\'' +
-                ", ServiceType='" + ServiceType + '\'' +
-                ", Description='" + Description + '\'' +
-                ", Cost=" + Cost +
-                ", Mechanic='" + Mechanic + '\'' +
-                ", NextServiceDate='" + NextServiceDate + '\'' +
+                "vehicleID=" + vehicleID +
+                ", serviceDate='" + serviceDate + '\'' +
+                ", serviceType='" + serviceType + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                ", mechanic='" + mechanic + '\'' +
+                ", nextServiceDate='" + nextServiceDate + '\'' +
                 '}';
     }
+
     public static class Builder {
-        private int VehicleID;
-        private String ServiceDate;
-        private String ServiceType;
-        private String Description;
-        private int Cost;
-        private String Mechanic;
-        private String NextServiceDate;
+        private int vehicleID;
+        private String serviceDate;
+        private String serviceType;
+        private String description;
+        private int cost;
+        private String mechanic;
+        private String nextServiceDate;
+
+
+        public Builder setVehicleID(int vehicleID) {
+            this.vehicleID = vehicleID;
+            return this;
+        }
+
+        public Builder setServiceDate(String serviceDate) {
+            this.serviceDate = serviceDate;
+            return this;
+        }
+
+        public Builder setServiceType(String serviceType) {
+            this.serviceType = serviceType;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder setCost(int cost) {
+            this.cost = cost;
+            return this;
+        }
+
+        public Builder setMechanic(String mechanic) {
+            this.mechanic = mechanic;
+            return this;
+        }
+
+        public Builder setNextServiceDate(String nextServiceDate) {
+            this.nextServiceDate = nextServiceDate;
+            return this;
+        }
+        private Builder copy(ServiceRecord.Builder builder) {
+            this.vehicleID = builder.vehicleID;
+            this.serviceDate = builder.serviceDate;
+            this.serviceType = builder.serviceType;
+            this.description = builder.description;
+            this.cost = builder.cost;
+            this.mechanic = builder.mechanic;
+            this.nextServiceDate = builder.nextServiceDate;
+            return this;
+        }
+
+        public ServiceRecord build() {
+            return new ServiceRecord(this);
+        }
+
+    }
 }
-
-    public void setVehicleID(int vehicleID) {
-        VehicleID = vehicleID;
-    }
-
-    public void setServiceDate(String serviceDate) {
-        ServiceDate = serviceDate;
-    }
-
-    public void setServiceType(String serviceType) {
-        ServiceType = serviceType;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
-    }
-
-    public void setCost(int cost) {
-        Cost = cost;
-    }
-
-    public void setMechanic(String mechanic) {
-        Mechanic = mechanic;
-    }
-
-    public void setNextServiceDate(String nextServiceDate) {
-        NextServiceDate = nextServiceDate;
-    }
-    public ServiceRecord copy(ServiceRecord serviceRecord) {
-        this.VehicleID = ServiceRecord.VehicleID;
-        this.ServiceDate = ServiceRecord.ServiceDate;
-        this.ServiceType = ServiceRecord.ServiceType;
-        this.Description = ServiceRecord.Description;
-        this.Cost = ServiceRecord.Cost;
-        this.Mechanic = ServiceRecord.Mechanic;
-        this.NextServiceDate = ServiceRecord.NextServiceDate;
-        return this;
-    }
-    public ServiceRecord build() {
-        return new ServiceRecord(this);
-    }
-
-    }
 

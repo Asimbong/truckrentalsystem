@@ -2,50 +2,50 @@ package za.ac.cput.domain;
 //Author: Malesela Modiba (222140275)
 import java.util.Objects;
 public class Payment {
-    private static String Date;
-    private static int RentalAmount;
-    private static int InvoiceNum;
-    private static String CustomerName;
-    private static String SalesRep;
-    private static String CarRented;
-    private static int TotalAmount;
+    private static String date;
+    private static int rentalAmount;
+    private static int invoiceNum;
+    private static String customerName;
+    private static String salesRep;
+    private static String carRented;
+    private static int totalAmount;
 
     public Payment() {
     }
 
     private Payment(Builder builder) {
-        this.Date = builder.Date;
-        this.RentalAmount = builder.RentalAmount;
-        this.InvoiceNum = builder.InvoiceNum;
-        this.CustomerName = builder.CustomerName;
-        this.SalesRep = builder.SalesRep;
-        this.CarRented = builder.CarRented;
-        this.TotalAmount = builder.TotalAmount;
+        this.date = builder.date;
+        this.rentalAmount = builder.rentalAmount;
+        this.invoiceNum = builder.invoiceNum;
+        this.customerName = builder.customerName;
+        this.salesRep = builder.salesRep;
+        this.carRented = builder.carRented;
+        this.totalAmount = builder.totalAmount;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public int getRentalAmount() {
-        return RentalAmount;
+        return rentalAmount;
     }
 
     public int getInvoiceNum() {
-        return InvoiceNum;
+        return invoiceNum;
     }
 
     public  String getCustomerName() {
-        return CustomerName;
+        return customerName;
     }
     public String getSalesRep() {
-        return SalesRep;
+        return salesRep;
     }
     public String getCarRented() {
-        return CarRented;
+        return carRented;
     }
     public int TotalAmount() {
-        return TotalAmount;
+        return totalAmount;
     }
 
     @Override
@@ -53,75 +53,82 @@ public class Payment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Payment payment = (Payment) o;
-        return TotalAmount == payment.TotalAmount && Objects.equals(Date, Payment.Date) && Objects.equals(RentalAmount, Payment.RentalAmount) && Objects.equals(InvoiceNum, Payment.InvoiceNum) && Objects.equals(CustomerName, Payment.CustomerName) && Objects.equals(SalesRep, Payment.SalesRep) && Objects.equals(CarRented, Payment.CarRented) && Objects.equals(TotalAmount, Payment.TotalAmount);
+        return totalAmount == payment.totalAmount
+                && Objects.equals(date, Payment.date)
+                && Objects.equals(rentalAmount, Payment.rentalAmount)
+                && Objects.equals(invoiceNum, Payment.invoiceNum)
+                && Objects.equals(customerName, Payment.customerName)
+                && Objects.equals(salesRep, Payment.salesRep)
+                && Objects.equals(carRented, Payment.carRented)
+                && Objects.equals(totalAmount, Payment.totalAmount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Date, RentalAmount,InvoiceNum,CustomerName,SalesRep,CarRented,TotalAmount);
+        return Objects.hash(date, rentalAmount,invoiceNum,customerName,salesRep,carRented,totalAmount);
     }
 
     @Override
     public String toString() {
         return "Payment{" +
-                "Date='" + Date + '\'' +
-                ", RentalAmount='" + RentalAmount + '\'' +
-                ", InvoiceNum='" + InvoiceNum + '\'' +
-                ", CustomerName='" + CustomerName + '\'' +
-                ", SalesRep='" + SalesRep + '\'' +
-                ", CarRented='" + CarRented + '\'' +
-                ", TotalAmount='" + TotalAmount +
+                "date='" + date + '\'' +
+                ", rentalAmount='" + rentalAmount + '\'' +
+                ", invoiceNum='" + invoiceNum + '\'' +
+                ", customerName='" + customerName + '\'' +
+                ", salesRep='" + salesRep + '\'' +
+                ", carRented='" + carRented + '\'' +
+                ", totalAmount='" + totalAmount +
                 '}';
     }
 
     public static class Builder {
-        private String Date;
-        private int RentalAmount;
-        private int InvoiceNum;
-        private String CustomerName;
-        private String SalesRep;
-        private String CarRented;
-        private int TotalAmount;
+        private String date;
+        private int rentalAmount;
+        private int invoiceNum;
+        private String customerName;
+        private String salesRep;
+        private String carRented;
+        private int totalAmount;
 
-        public Builder setDate(String Date) {
-            this.Date = Date;
-            return this;
-        }
-
-        public Builder setRentalAmount(int RentalAmount) {
-            this.RentalAmount = RentalAmount;
+        public Builder setDate(String date) {
+            this.date = date;
             return this;
         }
 
-        public Builder setInvoiceNum(int InvoiceNum) {
-            this.InvoiceNum = InvoiceNum;
+        public Builder setRentalAmount(int rentalAmount) {
+            this.rentalAmount = rentalAmount;
             return this;
         }
 
-        public Builder setCustomerName(String CustomerName) {
-            this.CustomerName = CustomerName;
+        public Builder setInvoiceNum(int invoiceNum) {
+            this.invoiceNum = invoiceNum;
             return this;
         }
-        public Builder setSalesRep(String SalesRep) {
-            this.SalesRep = SalesRep;
+
+        public Builder setCustomerName(String customerName) {
+            this.customerName = customerName;
             return this;
         }
-        public Builder setCarRented(String CarRented) {
-            this.CarRented = CarRented;
+        public Builder setSalesRep(String salesRep) {
+            this.salesRep = salesRep;
             return this;
         }
-        public Builder setTotalAmount(int TotalAmount) {
-            this.TotalAmount = TotalAmount;
+        public Builder setCarRented(String carRented) {
+            this.carRented = carRented;
+            return this;
+        }
+        public Builder setTotalAmount(int totalAmount) {
+            this.totalAmount = totalAmount;
             return this;
         }
 
         public Builder copy(Payment payment) {
-            this.Date = payment.Date;
-            this.RentalAmount = payment.RentalAmount;
-            this.InvoiceNum = payment.InvoiceNum;
-            this.CustomerName = payment.CustomerName;
-            this.CarRented = payment.CarRented;
-            this.TotalAmount = payment.TotalAmount;
+            this.date = payment.date;
+            this.rentalAmount = payment.rentalAmount;
+            this.invoiceNum = payment.invoiceNum;
+            this.customerName = payment.customerName;
+            this.carRented = payment.carRented;
+            this.totalAmount = payment.totalAmount;
             return this;
         }
 
