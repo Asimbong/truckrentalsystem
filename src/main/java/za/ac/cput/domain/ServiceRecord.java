@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 
 import java.util.Objects;
-
+//Malesela Modiba (222140275)
 public class ServiceRecord {
     private static int vehicleID;
     private static String serviceDate;

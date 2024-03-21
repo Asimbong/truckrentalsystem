@@ -2,7 +2,7 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.ServiceRecord;
 import za.ac.cput.util.Helper;
-
+//Malesela Modiba (222140275)
 public class ServiceRecordFactory {
     public static ServiceRecord buildServiceRecord(int vehicleID, String serviceDate, String serviceType, String description, int cost, String mechanic, String nextServiceDate) {
         if (Helper.isNullOrEmpty(String.valueOf(vehicleID)) || Helper.isNullOrEmpty(serviceDate) || Helper.isNullOrEmpty(serviceType)
