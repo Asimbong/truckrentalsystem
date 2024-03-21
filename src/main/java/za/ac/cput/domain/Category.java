@@ -3,7 +3,7 @@ package za.ac.cput.domain;
 import java.util.Objects;
 
 /**
- * ReturnCar.java
+ * Category.java
  * This is the Domain program
  * @author Thandolwethu Khoza (221797289)
  * Date: 20 March 2024
