@@ -9,7 +9,7 @@ import java.util.Objects;
  * Date: 20 March 2024
  */
 public class Admin {
-    private int adminID;
+    private String adminID;
     private String adminName;
     private String adminSurname;
     private String email;
@@ -20,7 +20,7 @@ public class Admin {
     private Admin(Builder builder) {
     }
 
-    public int getAdminID() {
+    public String getAdminID() {
         return adminID;
     }
 
@@ -60,12 +60,12 @@ public class Admin {
     }
 
     public static class Builder {
-        private int adminID;
+        private String adminID;
         private String adminName;
         private String adminSurname;
         private String email;
 
-        public Builder setAdminID(int adminID) {
+        public Builder setAdminID(String adminID) {
             this.adminID = adminID;
             return this;
         }
