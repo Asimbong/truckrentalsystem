@@ -4,7 +4,12 @@ import za.ac.cput.domain.Admin;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * AdminRepository.java
+ * This is the repository program
+ * @aurthor Asimbonge Mbende (221090754)
+ * Date: 22 March 2024
+ */
 public class AdminRepository implements IAdminRepository {
     private static IAdminRepository adminRepository = null;
 
