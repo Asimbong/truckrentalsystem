@@ -4,7 +4,12 @@ import za.ac.cput.domain.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * CustomerRepository.java
+ * This is the repository program
+ * @aurthor Asimbonge Mbende (221090754)
+ * Date: 22 March 2024
+ */
 public class CustomerRepository implements ICustomerRepository {
     private static ICustomerRepository customerRepository = null;
 
