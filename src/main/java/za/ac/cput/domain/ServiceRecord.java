@@ -1,7 +1,12 @@
 package za.ac.cput.domain;
 
 import java.util.Objects;
-//Malesela Modiba (222140275)
+/**
+ * PaymentRepository.java
+ * This is the repository program
+ * @aurthor Malesela Modiba (222140275)
+ * Date: 23 March 2024
+ */
 public class ServiceRecord {
     private static int vehicleID;
     private static String serviceDate;
