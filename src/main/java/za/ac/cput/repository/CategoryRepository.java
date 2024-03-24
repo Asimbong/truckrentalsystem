@@ -17,7 +17,7 @@ public class CategoryRepository implements ICategoryRepository{
 
     private List<Category> categoryList;
 
-    private CategoryRepository() {
+    public CategoryRepository() {
         categoryList = new ArrayList<Category>();
     }
 

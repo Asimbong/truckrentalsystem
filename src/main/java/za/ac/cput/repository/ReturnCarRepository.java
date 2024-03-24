@@ -17,7 +17,7 @@ public class ReturnCarRepository implements IReturnCarRepository{
 
     private List<ReturnCar> returnCarList;
 
-    private ReturnCarRepository() {
+    public ReturnCarRepository() {
         returnCarList = new ArrayList<ReturnCar>();
     }
 
