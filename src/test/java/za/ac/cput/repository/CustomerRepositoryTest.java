@@ -24,7 +24,7 @@ private static final Customer customer= CustomerFactory.buildCustomer("David","S
 void a_create() {
     System.out.println("------------------------- Create Customer ----------------------------------------");
     Customer customer1 = customerRepository.create(customer);
-    assertEquals(customer, customer1.getIdNumber());
+    assertEquals(customer, customer1);
     System.out.println("Create Customer: " + customer1 + "\n");
 
 }
