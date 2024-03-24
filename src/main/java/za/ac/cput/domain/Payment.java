@@ -1,5 +1,10 @@
 package za.ac.cput.domain;
-//Author: Malesela Modiba (222140275)
+/**
+ * PaymentRepository.java
+ * This is the repository program
+ * @aurthor Malesela Modiba (222140275)
+ * Date: 23 March 2024
+ */
 import java.util.Objects;
 public class Payment {
     private static String date;
