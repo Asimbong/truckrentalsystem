@@ -1,10 +1,10 @@
 package za.ac.cput.repository;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Admin;
 import za.ac.cput.factory.AdminFactory;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,17 +16,23 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @TestMethodOrder(MethodOrderer.MethodName.class) // help in testing our CRUD method in Alphanumeric order
 class AdminRepositoryTest {
-    private static AdminRepository adminRepository = (AdminRepository) AdminRepository.getRepository();
 
-    private static final Admin admin = AdminFactory.buildAdmin("111", "Asimbonge", "Mbende", "ambende@gmail.com");
+    private static AdminRepository adminRepository;
+
+    private  Admin admin ;
 
     private static final Admin.Builder adminBuilder = new Admin.Builder(); //Create an instance of Admin.Builder
-
+    @BeforeEach
+    void setUp() {
+        admin = AdminFactory.buildAdmin("111", "Asimbonge", "Mbende", "ambende@gmail.com");
+        adminRepository =  (AdminRepository) AdminRepository.getRepository();
+        adminRepository.adminList.add(admin); // Initialize adminRepository with admin object
+    }
     @Test
     void a_create() {
         System.out.println("------------------------- Create Admin ----------------------------------------");
         Admin admin1 = adminRepository.create(admin);
-        assertEquals(admin, admin1.getAdminID());
+        assertEquals(admin, admin1);
         System.out.println("Create Admin: " + admin1 + "\n");
 
     }
@@ -37,21 +43,13 @@ class AdminRepositoryTest {
         System.out.println("------------------------- Read Admin ----------------------------------------");
 
         Admin readAdmin = adminRepository.read(admin.getAdminID());
-        assertNotNull(readAdmin);
+        assertNotNull(readAdmin, "The read admin should not be null");
+        assertEquals(admin, readAdmin,"The read admin should match the admin in the repository");
         System.out.println("Read Admin: " + readAdmin + "\n");
 
     }
 
     @Test
-        // From this code I get this error:"non-static method 'copy(za.ac.cput.Admin)' cannot be referenced from a non-static context"
-//    void c_update(){
-//        System.out.println("------------------------- Update Admin ----------------------------------------");
-//        Admin updatedAdmin=Admin.Builder.copy(admin).setAdminName("Asi").setAdminSurname("Mbende").setEmail("ambende@yahoo.com").build();
-//        assertNotNull(adminRepository.update(updatedAdmin));
-//        System.out.println("Update Admin: " +updatedAdmin+"\n");
-//
-//
-//    }
     void c_update() {
         System.out.println("------------------------- Update Admin ----------------------------------------");
         Admin updatedAdmin = adminBuilder.copy(admin).setAdminName("Asi").setAdminSurname("Mbende").setEmail("ambende@yahoo.com").build();

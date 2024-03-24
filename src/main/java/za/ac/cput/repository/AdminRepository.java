@@ -13,7 +13,7 @@ import java.util.List;
 public class AdminRepository implements IAdminRepository {
     private static IAdminRepository adminRepository = null;
 
-    private List<Admin> adminList;
+    public List<Admin> adminList;
 
     private AdminRepository() {
         adminList = new ArrayList<Admin>();
