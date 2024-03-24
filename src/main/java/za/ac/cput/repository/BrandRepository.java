@@ -39,13 +39,14 @@ public class BrandRepository implements IBrandRepository {
     }
 
     @Override
-    public Brand read(int brandId) {
+    public Brand read(Integer brandId) {
         for (Brand brand : brandList) {
             if (brand.getBrandId() == brandId)
                 return brand;
         }
         return null;
     }
+
 
     @Override
     public Brand update(Brand brand) {
@@ -60,10 +61,12 @@ public class BrandRepository implements IBrandRepository {
     }
 
     @Override
-    public boolean delete(int brandId) {
+    public boolean delete(Integer brandId) {
         Brand brandToDelete = read(brandId);
         if (brandToDelete == null)
             return false;
         return brandList.remove(brandToDelete);
     }
+
+
 }
