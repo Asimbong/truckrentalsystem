@@ -17,7 +17,7 @@ public class Category {
     private String carType;
     private int brandID;
 
-    public Category() {
+    public Category(int i, String compactCar, int i1, String medium, String sedan, int i2) {
     }
 
     private Category(Builder builder) {
