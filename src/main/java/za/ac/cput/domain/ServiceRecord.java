@@ -1,5 +1,6 @@
 package za.ac.cput.domain;
 
+import java.time.LocalDate;
 import java.util.Objects;
 /**
  * PaymentRepository.java
@@ -9,12 +10,12 @@ import java.util.Objects;
  */
 public class ServiceRecord {
     private static int vehicleID;
-    private static String serviceDate;
+    private static LocalDate serviceDate;
     private static String serviceType;
     private static String description;
-    private static int cost;
+    private static double cost;
     private static String mechanic;
-    private static String nextServiceDate;
+    private static LocalDate nextServiceDate;
 
     public ServiceRecord() {
     }
@@ -37,7 +38,7 @@ public class ServiceRecord {
         return serviceType;
     }
 
-    public String getServiceDate() {
+    public LocalDate getServiceDate() {
         return serviceDate;
     }
 
@@ -45,7 +46,7 @@ public class ServiceRecord {
         return description;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
@@ -53,7 +54,7 @@ public class ServiceRecord {
         return mechanic;
     }
 
-    public String getNextServiceDate() {
+    public LocalDate getNextServiceDate() {
         return nextServiceDate;
     }
 
@@ -92,12 +93,12 @@ public class ServiceRecord {
 
     public static class Builder {
         private int vehicleID;
-        private String serviceDate;
+        private LocalDate serviceDate;
         private String serviceType;
         private String description;
-        private int cost;
+        private double cost;
         private String mechanic;
-        private String nextServiceDate;
+        private LocalDate nextServiceDate;
 
 
         public Builder setVehicleID(int vehicleID) {
@@ -105,7 +106,7 @@ public class ServiceRecord {
             return this;
         }
 
-        public Builder setServiceDate(String serviceDate) {
+        public Builder setServiceDate(LocalDate serviceDate) {
             this.serviceDate = serviceDate;
             return this;
         }
@@ -120,7 +121,7 @@ public class ServiceRecord {
             return this;
         }
 
-        public Builder setCost(int cost) {
+        public Builder setCost(double cost) {
             this.cost = cost;
             return this;
         }
@@ -130,18 +131,18 @@ public class ServiceRecord {
             return this;
         }
 
-        public Builder setNextServiceDate(String nextServiceDate) {
+        public Builder setNextServiceDate(LocalDate nextServiceDate) {
             this.nextServiceDate = nextServiceDate;
             return this;
         }
-        private Builder copy(ServiceRecord.Builder builder) {
-            this.vehicleID = builder.vehicleID;
-            this.serviceDate = builder.serviceDate;
-            this.serviceType = builder.serviceType;
-            this.description = builder.description;
-            this.cost = builder.cost;
-            this.mechanic = builder.mechanic;
-            this.nextServiceDate = builder.nextServiceDate;
+        public Builder copy(ServiceRecord serviceRecord) {
+            this.vehicleID = serviceRecord.vehicleID;
+            this.serviceDate = serviceRecord.serviceDate;
+            this.serviceType = serviceRecord.serviceType;
+            this.description = serviceRecord.description;
+            this.cost = serviceRecord.cost;
+            this.mechanic = serviceRecord.mechanic;
+            this.nextServiceDate = serviceRecord.nextServiceDate;
             return this;
         }
 
