@@ -8,27 +8,27 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
- * ReturnCarFactory.java
+ * ReturnTruckFactory.java
  * This is the Factory program
  * @author Thandolwethu Khoza (221797289)
  * Date: 21 March 2024
  */
 
-public class ReturnCarFactory {
-    public static ReturnTruck buildReturnCar(String returnID, int rentalID, double overdueAmount, LocalDate dateReturn, LocalDateTime timeReturn) {
-        if (Helper.isNullOrEmpty(returnID) || Helper.isNullOrEmpty(String.valueOf(rentalID)) || Helper.isNullOrEmpty(String.valueOf(overdueAmount))
+public class ReturnTruckFactory {
+    public static ReturnTruck buildReturnTruck(int returnID, int rentalID, double overdueAmount, LocalDate dateReturn, LocalDateTime timeReturn) {
+        if (Helper.isNullOrEmpty(String.valueOf(returnID)) || Helper.isNullOrEmpty(String.valueOf(rentalID)) || Helper.isNullOrEmpty(String.valueOf(overdueAmount))
                 || Helper.isNullOrEmpty(String.valueOf(dateReturn)) ||  Helper.isNullOrEmpty(String.valueOf(timeReturn)))
                 return null;
 
         return new ReturnTruck.Builder().setReturnID(returnID).setRentalID(rentalID)
                 .setOverdueAmount(overdueAmount).setDateReturn(dateReturn).setTimeReturn(LocalTime.from(timeReturn)).build();
     }
-    public static ReturnTruck buildReturnCar(int rentalID, double overdueAmount, LocalDate dateReturn) {
+    public static ReturnTruck buildReturnTruck(int rentalID, double overdueAmount, LocalDate dateReturn) {
         if (Helper.isNullOrEmpty(String.valueOf(rentalID)) || Helper.isNullOrEmpty(String.valueOf(overdueAmount))
                 || Helper.isNullOrEmpty(String.valueOf(dateReturn)))
             return null;
 
-        String returnID = Helper.generateId();
+        int returnID = Integer.parseInt(Helper.generateId());
 
         return new ReturnTruck.Builder().setReturnID(returnID).setRentalID(rentalID)
                 .setOverdueAmount(overdueAmount).setDateReturn(dateReturn).build();

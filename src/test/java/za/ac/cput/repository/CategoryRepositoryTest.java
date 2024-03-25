@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Category;
 
 
+import java.sql.SQLOutput;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CategoryRepositoryTest {
@@ -17,16 +19,16 @@ public class CategoryRepositoryTest {
                 .setCategoryID(1)
                 .setDescription("Test Category 1")
                 .setNumberOfAvailable(5)
-                .setCarSize("Compact")
-                .setCarType("Sedan")
+                .setTruckSize("Compact")
+                .setTruckType("Sedan")
                 .setBrandID(1001)
                 .build());
         categoryRepository.create(new Category.Builder()
                 .setCategoryID(2)
                 .setDescription("Test Category 2")
                 .setNumberOfAvailable(3)
-                .setCarSize("Medium")
-                .setCarType("SUV")
+                .setTruckSize("Medium")
+                .setTruckType("SUV")
                 .setBrandID(1002)
                 .build());
 
@@ -39,13 +41,13 @@ public class CategoryRepositoryTest {
     }
 
     @Test
-    void create() {
+    void a_create() {
         Category newCategory = new Category.Builder()
                 .setCategoryID(3)
                 .setDescription("Test Category 3")
                 .setNumberOfAvailable(4)
-                .setCarSize("Large")
-                .setCarType("Hatchback")
+                .setTruckSize("Large")
+                .setTruckType("Hatchback")
                 .setBrandID(1003)
                 .build();
         Category createdCategory = categoryRepository.create(newCategory);
@@ -65,8 +67,10 @@ public class CategoryRepositoryTest {
 //    }
 
 //    @Test
-//    void delete() {
-//
+//    void e_delete() {
+//        boolean success = categoryRepository.delete(categoryRepository.toString());
+//        assertEquals(true, success);
+//        System.out.println(("Deleted " + success));
 //    }
 
 }

@@ -59,8 +59,6 @@ public class CategoryRepository implements ICategoryRepository{
         if(delete(categoryID)) {
             if (categoryList.add(category))
                 return category;
-            else
-                return null;
         }
         return null;
     }

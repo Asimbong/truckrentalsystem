@@ -12,13 +12,13 @@ import java.util.Objects;
  */
 
 public class ReturnTruck {
-    private String returnID;
+    private int returnID;
     private int rentalID;
     private double overdueAmount;
     private LocalDate dateReturn;
     private LocalTime timeReturn;
 
-    public ReturnTruck(String number, int i, double v, LocalDate now, LocalTime nowed) {
+    public ReturnTruck(int number, int i, double v, LocalDate now, LocalTime nowed) {
 
     }
 
@@ -30,7 +30,7 @@ public class ReturnTruck {
         this.timeReturn = builder.timeReturn;
     }
 
-    public String getReturnID() {
+    public int getReturnID() {
         return returnID;
     }
 
@@ -86,13 +86,13 @@ public class ReturnTruck {
 
     public static class Builder{
 
-        private String returnID;
+        private int returnID;
         private int rentalID;
         private double overdueAmount;
         private LocalDate dateReturn;
         private LocalTime timeReturn;
 
-        public Builder setReturnID(String returnID) {
+        public Builder setReturnID(int returnID) {
             this.returnID = returnID;
             return this;
         }

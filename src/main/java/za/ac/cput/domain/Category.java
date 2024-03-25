@@ -13,8 +13,8 @@ public class Category {
     private int categoryID;
     private String description;
     private int numberOfAvailable;
-    private String carSize;
-    private String carType;
+    private String truckSize;
+    private String truckType;
     private int brandID;
 
     public Category(int i, String compactCar, int i1, String medium, String sedan, int i2) {
@@ -24,8 +24,8 @@ public class Category {
         this.categoryID = builder.categoryID;
         this.description = builder.description;
         this.numberOfAvailable = builder.numberOfAvailable;
-        this.carSize = builder.carSize;
-        this.carType = builder.carType;
+        this.truckSize = builder.truckSize;
+        this.truckType = builder.truckType;
         this.brandID = builder.brandID;
     }
 
@@ -41,12 +41,12 @@ public class Category {
         return numberOfAvailable;
     }
 
-    public String getCarSize() {
-        return carSize;
+    public String getTruckSize() {
+        return truckSize;
     }
 
-    public String getCarType() {
-        return carType;
+    public String getTruckType() {
+        return truckType;
     }
 
     public int getBrandID() {
@@ -61,14 +61,14 @@ public class Category {
         return categoryID == category.categoryID
                 && Objects.equals(description, category.description)
                 && Objects.equals(numberOfAvailable, category.numberOfAvailable)
-                && Objects.equals(carSize, category.carSize)
-                && Objects.equals(carType, category.carType)
+                && Objects.equals(truckSize, category.truckSize)
+                && Objects.equals(truckType, category.truckType)
                 && Objects.equals(brandID, category.brandID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(categoryID, description, numberOfAvailable, carSize,carType, brandID);
+        return Objects.hash(categoryID, description, numberOfAvailable, truckSize,truckType, brandID);
     }
 
 
@@ -78,9 +78,9 @@ public class Category {
                 "categoryID=" + categoryID +
                 ", description='" + description + '\'' +
                 ", numberOfAvailable=" + numberOfAvailable +
-                ", carSize='" + carSize + '\'' +
-                ", carType='" + carType + '\'' +
-                ", braneID=" + brandID +
+                ", truckSize='" + truckSize + '\'' +
+                ", truckType='" + truckType + '\'' +
+                ", brandID=" + brandID +
                 '}';
     }
 
@@ -90,8 +90,8 @@ public class Category {
         private int categoryID;
         private String description;
         private int numberOfAvailable;
-        private String carSize;
-        private String carType;
+        private String truckSize;
+        private String truckType;
         private int brandID;
 
         public Builder setCategoryID(int categoryID) {
@@ -109,13 +109,13 @@ public class Category {
             return this;
         }
 
-        public Builder setCarSize(String carSize) {
-            this.carSize = carSize;
+        public Builder setTruckSize(String truckSize) {
+            this.truckSize = truckSize;
             return this;
         }
 
-        public Builder setCarType(String carType) {
-            this.carType = carType;
+        public Builder setTruckType(String truckType) {
+            this.truckType = truckType;
             return this;
         }
 
