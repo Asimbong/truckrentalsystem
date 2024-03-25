@@ -1,6 +1,6 @@
 package za.ac.cput.repository;
 
-import za.ac.cput.domain.ReturnCar;
+import za.ac.cput.domain.ReturnTruck;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,10 @@ import java.util.List;
 public class ReturnCarRepository implements IReturnCarRepository{
     private static IReturnCarRepository returnCarRepository = null;
 
-    private List<ReturnCar> returnCarList;
+    private List<ReturnTruck> returnTruckList;
 
     public ReturnCarRepository() {
-        returnCarList = new ArrayList<ReturnCar>();
+        returnTruckList = new ArrayList<ReturnTruck>();
     }
 
     public static IReturnCarRepository getReturnCarRepository() {
@@ -29,31 +29,31 @@ public class ReturnCarRepository implements IReturnCarRepository{
     }
 
     @Override
-    public List<ReturnCar> getAll() {
-        return returnCarList;
+    public List<ReturnTruck> getAll() {
+        return returnTruckList;
     }
 
     @Override
-    public ReturnCar create(ReturnCar returnCar) {
-        boolean success = returnCarList.add(returnCar);
+    public ReturnTruck create(ReturnTruck returnTruck) {
+        boolean success = returnTruckList.add(returnTruck);
         if (success)
-            return returnCar;
+            return returnTruck;
         return null;
     }
 
-    public ReturnCar read(String id) {
-        for (ReturnCar returnCar : returnCarList) {
-            if (returnCar.getReturnID() == id)
-                return returnCar;
+    public ReturnTruck read(String id) {
+        for (ReturnTruck returnTruck : returnTruckList) {
+            if (returnTruck.getReturnID() == id)
+                return returnTruck;
         }
         return null;
     }
     @Override
-    public ReturnCar update(ReturnCar returnCar) {
-        String returnCarID = String.valueOf(returnCar.getReturnID());
+    public ReturnTruck update(ReturnTruck returnTruck) {
+        String returnCarID = String.valueOf(returnTruck.getReturnID());
         if(delete(returnCarID)) {
-            if (returnCarList.add(returnCar))
-                return returnCar;
+            if (returnTruckList.add(returnTruck))
+                return returnTruck;
             else
                 return null;
         }
@@ -61,10 +61,10 @@ public class ReturnCarRepository implements IReturnCarRepository{
     }
     @Override
     public boolean delete(String id) {
-        ReturnCar returnCarToDelete = read(id);
-        if (returnCarToDelete == null)
+        ReturnTruck returnTruckToDelete = read(id);
+        if (returnTruckToDelete == null)
             return false;
-        return (returnCarList.remove(returnCarToDelete));
+        return (returnTruckList.remove(returnTruckToDelete));
     }
 
 }
