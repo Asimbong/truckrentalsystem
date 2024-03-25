@@ -5,24 +5,24 @@ import java.time.LocalTime;
 import java.util.Objects;
 
 /**
- * ReturnCar.java
+ * ReturnTruck.java
  * This is the Domain program
  * @author Thandolwethu Khoza (221797289)
  * Date: 18 March 2024
  */
 
-public class ReturnCar {
+public class ReturnTruck {
     private String returnID;
     private int rentalID;
     private double overdueAmount;
     private LocalDate dateReturn;
     private LocalTime timeReturn;
 
-    public ReturnCar(String number, int i, double v, LocalDate now, LocalTime nowed) {
+    public ReturnTruck(String number, int i, double v, LocalDate now, LocalTime nowed) {
 
     }
 
-    private ReturnCar(Builder builder) {
+    private ReturnTruck(Builder builder) {
         this.returnID = builder.returnID;
         this.rentalID = builder.rentalID;
         this.overdueAmount = builder.overdueAmount;
@@ -54,12 +54,12 @@ public class ReturnCar {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ReturnCar returnCar = (ReturnCar) o;
-        return returnID == returnCar.returnID
-                && Objects.equals(rentalID, returnCar.rentalID)
-                && Objects.equals(overdueAmount, returnCar.overdueAmount)
-                && Objects.equals(dateReturn, returnCar.dateReturn)
-                && Objects.equals(timeReturn, returnCar.timeReturn);
+        ReturnTruck returnTruck = (ReturnTruck) o;
+        return returnID == returnTruck.returnID
+                && Objects.equals(rentalID, returnTruck.rentalID)
+                && Objects.equals(overdueAmount, returnTruck.overdueAmount)
+                && Objects.equals(dateReturn, returnTruck.dateReturn)
+                && Objects.equals(timeReturn, returnTruck.timeReturn);
     }
 
 
@@ -71,7 +71,7 @@ public class ReturnCar {
 
     @Override
     public String toString() {
-        return "returnCar{" +
+        return "returnTruck{" +
                 "returnID='" + returnID + '\'' +
                 ", rentalID=" + rentalID +
                 ", overdueAmount=" + overdueAmount +
@@ -116,17 +116,17 @@ public class ReturnCar {
             this.timeReturn = timeReturn;
             return this;
         }
-        public Builder copy(ReturnCar returnCar){
-            this.returnID = returnCar.returnID;
-            this.rentalID = returnCar.rentalID;
-            this.overdueAmount = returnCar.overdueAmount;
-            this.dateReturn = returnCar.dateReturn;
-            this.timeReturn = returnCar.timeReturn;
+        public Builder copy(ReturnTruck returnTruck){
+            this.returnID = returnTruck.returnID;
+            this.rentalID = returnTruck.rentalID;
+            this.overdueAmount = returnTruck.overdueAmount;
+            this.dateReturn = returnTruck.dateReturn;
+            this.timeReturn = returnTruck.timeReturn;
             return this;
         }
 
-        public ReturnCar build() {
-            return new ReturnCar(this);
+        public ReturnTruck build() {
+            return new ReturnTruck(this);
         }
     }
 }
