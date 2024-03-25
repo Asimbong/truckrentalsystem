@@ -19,7 +19,7 @@ public class ReturnTruckFactoryTest {
     @Test
     public void testCalculateTotalAmount() {
 
-        ReturnTruck returnTruck = new ReturnTruck("12345", 1001, 50.0, LocalDate.now(), LocalTime.now());
+        ReturnTruck returnTruck = new ReturnTruck(12345, 1001, 50.0, LocalDate.now(), LocalTime.now());
 
         double expectedTotalAmount = returnTruck.getOverdueAmount() * 1.1;
 

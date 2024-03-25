@@ -19,19 +19,17 @@ public class CategoryFactoryTest {
             int categoryID = 1;
             String description = "Compact car";
             int numberOfAvailable = 10;
-            String carSize = "Medium";
-            String carType = "Sedan";
+            String truckSize = "Medium";
+            String truckType = "Sedan";
             int brandID = 1;
 
-            Category category = CategoryFactory.buildCategory(categoryID, description, numberOfAvailable, carSize, carType, brandID);
-
+            Category category = CategoryFactory.buildCategory(categoryID, description, numberOfAvailable, truckSize, truckType, brandID);
             assertNotNull(category);
-
             assertEquals(categoryID, category.getCategoryID());
             assertEquals(description, category.getDescription());
             assertEquals(numberOfAvailable, category.getNumberOfAvailable());
-            assertEquals(carSize, category.getCarSize());
-            assertEquals(carType, category.getCarType());
+            assertEquals(truckSize, category.getTruckSize());
+            assertEquals(truckType, category.getTruckType());
             assertEquals(brandID, category.getBrandID());
 
             System.out.println(category);
