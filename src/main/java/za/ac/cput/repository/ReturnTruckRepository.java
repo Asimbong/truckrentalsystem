@@ -53,6 +53,9 @@ public class ReturnTruckRepository implements IReturnTruckRepository {
         }
         return null;
     }
+
+
+
     @Override
     public ReturnTruck update(ReturnTruck returnTruck) {
         String returnCarID = String.valueOf(returnTruck.getReturnID());
@@ -64,6 +67,7 @@ public class ReturnTruckRepository implements IReturnTruckRepository {
         }
         return null;
     }
+
     @Override
     public boolean delete(String id) {
         ReturnTruck returnTruckToDelete = read(id);

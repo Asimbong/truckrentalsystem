@@ -19,7 +19,7 @@ class CustomerRepositoryTest {
 private static CustomerRepository customerRepository= (CustomerRepository) CustomerRepository.getCustomerRepository();
 private static final Customer customer= CustomerFactory.buildCustomer("David","Smith","dsmith@gmail.com","1234567890123","12345678901","0123456789",123);
 
-    private static final Customer.Builder customerBuilder = new Customer.Builder(); //Create an instance of Customer.Builder
+private static final Customer.Builder customerBuilder = new Customer.Builder(); //Create an instance of Customer.Builder
 @Test
 void a_create() {
     System.out.println("------------------------- Create Customer ----------------------------------------");
