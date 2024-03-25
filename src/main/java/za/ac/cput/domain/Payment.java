@@ -5,15 +5,16 @@ package za.ac.cput.domain;
  * @aurthor Malesela Modiba (222140275)
  * Date: 23 March 2024
  */
+import java.time.LocalDate;
 import java.util.Objects;
 public class Payment {
-    private static String date;
-    private static int rentalAmount;
+    private static LocalDate date;
+    private static double rentalAmount;
     private static int invoiceNum;
     private static String customerName;
     private static String salesRep;
-    private static String carRented;
-    private static int totalAmount;
+    private static String truckRented;
+    private static double totalAmount;
 
     public Payment() {
     }
@@ -24,15 +25,15 @@ public class Payment {
         this.invoiceNum = builder.invoiceNum;
         this.customerName = builder.customerName;
         this.salesRep = builder.salesRep;
-        this.carRented = builder.carRented;
+        this.truckRented = builder.truckRented;
         this.totalAmount = builder.totalAmount;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public int getRentalAmount() {
+    public double getRentalAmount() {
         return rentalAmount;
     }
 
@@ -46,10 +47,10 @@ public class Payment {
     public String getSalesRep() {
         return salesRep;
     }
-    public String getCarRented() {
-        return carRented;
+    public String gettruckRented() {
+        return truckRented;
     }
-    public int TotalAmount() {
+    public double TotalAmount() {
         return totalAmount;
     }
 
@@ -64,43 +65,43 @@ public class Payment {
                 && Objects.equals(invoiceNum, Payment.invoiceNum)
                 && Objects.equals(customerName, Payment.customerName)
                 && Objects.equals(salesRep, Payment.salesRep)
-                && Objects.equals(carRented, Payment.carRented)
+                && Objects.equals(truckRented, Payment.truckRented)
                 && Objects.equals(totalAmount, Payment.totalAmount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, rentalAmount,invoiceNum,customerName,salesRep,carRented,totalAmount);
+        return Objects.hash(date, rentalAmount,invoiceNum,customerName,salesRep,truckRented,totalAmount);
     }
 
     @Override
     public String toString() {
         return "Payment{" +
                 "date='" + date + '\'' +
-                ", rentalAmount='" + rentalAmount + '\'' +
+                ", rentalAmount='R" + rentalAmount + '\'' +
                 ", invoiceNum='" + invoiceNum + '\'' +
                 ", customerName='" + customerName + '\'' +
                 ", salesRep='" + salesRep + '\'' +
-                ", carRented='" + carRented + '\'' +
-                ", totalAmount='" + totalAmount +
+                ", truckRented='" + truckRented + '\'' +
+                ", totalAmount='R" + totalAmount +
                 '}';
     }
 
     public static class Builder {
-        private String date;
-        private int rentalAmount;
+        private LocalDate date;
+        private double rentalAmount;
         private int invoiceNum;
         private String customerName;
         private String salesRep;
-        private String carRented;
-        private int totalAmount;
+        private String truckRented;
+        private double totalAmount;
 
-        public Builder setDate(String date) {
+        public Builder setDate(LocalDate date) {
             this.date = date;
             return this;
         }
 
-        public Builder setRentalAmount(int rentalAmount) {
+        public Builder setRentalAmount(double rentalAmount) {
             this.rentalAmount = rentalAmount;
             return this;
         }
@@ -118,11 +119,11 @@ public class Payment {
             this.salesRep = salesRep;
             return this;
         }
-        public Builder setCarRented(String carRented) {
-            this.carRented = carRented;
+        public Builder setTruckRented(String truckRented) {
+            this.truckRented = truckRented;
             return this;
         }
-        public Builder setTotalAmount(int totalAmount) {
+        public Builder setTotalAmount(double totalAmount) {
             this.totalAmount = totalAmount;
             return this;
         }
@@ -132,7 +133,7 @@ public class Payment {
             this.rentalAmount = payment.rentalAmount;
             this.invoiceNum = payment.invoiceNum;
             this.customerName = payment.customerName;
-            this.carRented = payment.carRented;
+            this.truckRented = payment.truckRented;
             this.totalAmount = payment.totalAmount;
             return this;
         }
