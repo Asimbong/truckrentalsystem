@@ -2,6 +2,7 @@ package za.ac.cput.domain;
 import java.util.Objects;
 /*Author:Ayanda Phumzile Khoza
   Student number:218057172
+  Domain Class
  Date:18 March 2024*/
 
 public class Car {
@@ -10,14 +11,19 @@ public class Car {
     private String model;
     private String color;
 
-
     public Car() {
     }
     private Car(Builder builder) {
+        this.carId = builder.carId;
+        this.carName = builder.carName;
+        this.model = builder.model;
+        this.color = builder.color;
 
     }
 
-    public String getCarId() {return carId;}
+    public String getCarId() {
+        return carId;
+    }
     public void setCarId(String carId) {
         this.carId = carId;
     }
@@ -67,17 +73,21 @@ public class Car {
         private String model;
         private String color;
 
-        public void setCarId(String carId) {
+        public Builder setCarId(String carId) {
             this.carId = carId;
+            return this;
         }
-        public void setCarName(String carName) {
+        public Builder setCarName(String carName) {
             this.carName = carName;
+            return this;
         }
-        public void setModel(String model) {
+        public Builder setModel(String model) {
             this.model = model;
+            return this;
         }
-        public void setColor(String color) {
+        public Builder setColor(String color) {
             this.color = color;
+            return this;
         }
 
         public Car.Builder copy(Car car) {

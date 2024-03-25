@@ -18,7 +18,7 @@ public class ReturnCar {
     private LocalDate dateReturn;
     private LocalTime timeReturn;
 
-    public ReturnCar() {
+    public ReturnCar(String number, int i, double v, LocalDate now, LocalTime nowed) {
 
     }
 
@@ -78,6 +78,10 @@ public class ReturnCar {
                 ", dateReturn=" + dateReturn +
                 ", timeReturn=" + timeReturn +
                 '}';
+    }
+
+    public double calculateTotalAmount() {
+        return overdueAmount * 1.1;
     }
 
     public static class Builder{
