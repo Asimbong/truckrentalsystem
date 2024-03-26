@@ -31,13 +31,19 @@ public class AdminRepository implements IAdminRepository {
         return adminList;
     }
 
-    @Override
-    public Admin create(Admin admin) {
-        boolean success = adminList.add(admin);
-        if (success)
-            return admin;
-        return null;
-    }
+//    @Override
+//    public Admin create(Admin admin) {
+//        boolean success = adminList.add(admin);
+//        if (success)
+//            return admin;
+//        return null;
+//    }
+    //or
+@Override
+public Admin create(Admin admin) {
+    boolean success = adminList.add(admin);
+    return success ? admin : null;
+}
 
     @Override
     public Admin read(String id) {
