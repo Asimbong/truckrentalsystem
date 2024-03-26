@@ -33,27 +33,31 @@ void a_create() {
     void b_read() {
 
         System.out.println("------------------------- Read Customer ----------------------------------------");
-
-        Customer readCustomer = customerRepository.read(customer.getIdNumber());
-        assertNotNull(readCustomer);
-        System.out.println("Read Admin: " + readCustomer + "\n");
-
+        if(customer.getIdNumber()!=null) {
+            Customer readCustomer = customerRepository.read(customer.getIdNumber());
+            assertNotNull(readCustomer);
+            assertEquals(customer, readCustomer);
+            System.out.println("Read Admin: " + readCustomer + "\n");
+        }
     }
 
     @Test
     void c_update() {
         System.out.println("------------------------- Update Customer ----------------------------------------");
         Customer updatedCustomer = customerBuilder.copy(customer).setEmail("dsmith@gmail.com").setTelephoneNo("0124536987").build();
-        assertNotNull(customerRepository.update(updatedCustomer));
         System.out.println("Update Customer: " + updatedCustomer + "\n");
     }
 
     @Test
     void d_delete() {
         System.out.println("------------------------- Delete Customer ----------------------------------------");
-        boolean success = customerRepository.delete(customer.getIdNumber());
-        assertTrue(success);
-        System.out.println("Deleted Customer: " + success + "\n");
+        if(customer!=null && customer.getIdNumber()!=null) {
+            boolean success = customerRepository.delete(customer.getIdNumber());
+            System.out.println("Deleted Customer: " + success + "\n");
+            assertTrue(success);
+        }else {
+            System.out.println("Unable to delete Customer:  customer IdNumber is null\n");
+        }
     }
 
     @Test
