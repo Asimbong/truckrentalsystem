@@ -14,7 +14,7 @@ public class RentCarRepository implements IRentCarRepository {
 
     private static IRentCarRepository rentCarRepository  = null;
 
-    private List<RentCar> rentedCarList;
+    List<RentCar> rentedCarList;
 
     private RentCarRepository() {
 
