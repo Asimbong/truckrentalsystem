@@ -9,7 +9,7 @@ import za.ac.cput.util.Helper;
  */
 public class BrandFactory {
 
-    public static Brand createBrand(int brandId, String brandName, String model, String color) {
+    public static Brand createBrand(int brandId, String brandName, String color) {
         if (Helper.isNullOrEmpty(brandName) || Helper.isNullOrEmpty(model) || Helper.isNullOrEmpty(color)) {
             return null;
         }
@@ -17,7 +17,6 @@ public class BrandFactory {
         return new Brand.Builder()
                 .setBrandId(brandId)
                 .setBrandName(brandName)
-                .setModel(model)
                 .setColor(color)
                 .build();
     }

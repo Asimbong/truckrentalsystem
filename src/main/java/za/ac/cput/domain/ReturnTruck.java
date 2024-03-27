@@ -18,7 +18,7 @@ public class ReturnTruck {
     private LocalDate dateReturn;
     private LocalTime timeReturn;
 
-    public ReturnTruck(String number, int i, double v, LocalDate now, LocalTime nowed) {
+    public ReturnTruck(int number, int i, double v, LocalDate now, LocalTime nowed) {
 
     }
 
