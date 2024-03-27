@@ -1,7 +1,8 @@
 package za.ac.cput.factory;
 
 
-import za.ac.cput.domain.RentCar;
+
+import za.ac.cput.domain.RentTruck;
 import za.ac.cput.util.Helper;
 
 import java.time.LocalDate;
@@ -13,8 +14,8 @@ import java.time.LocalDate;
  * @aurthor Zukhanye Anele Mene  (219404275)
  * Date: 21 March 2024
  */
-public class RentCarFactory {
-    public static RentCar buildRentCar(int rentalID, int customerID, int truckID, LocalDate rentalStartDate, LocalDate rentalEndDate, double rentalCost) {
+public class RentTruckFactory {
+    public static RentTruck buildRentTruck(int rentalID, int customerID, int truckID, LocalDate rentalStartDate, LocalDate rentalEndDate, double rentalCost) {
         // Check if any required field is null or empty
         if (Helper.isNullOrEmpty(String.valueOf(rentalID)) ||
             Helper.isNullOrEmpty(String.valueOf(customerID)) ||
@@ -25,7 +26,7 @@ public class RentCarFactory {
             return null;
         }
         // Return a new RentCar object built using the Builder pattern
-        return new RentCar.Builder()
+        return new RentTruck.Builder()
                 .setRentalID(rentalID)
                 .setCustomerID(customerID)
                 .setTruckID(truckID)
