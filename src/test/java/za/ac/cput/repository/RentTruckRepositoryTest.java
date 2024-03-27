@@ -6,20 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.RentTruck;
-import za.ac.cput.factory.AdminFactory;
 import za.ac.cput.factory.RentTruckFactory;
 
 import java.time.LocalDate;
 import java.time.Month;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * RentTruckRepositoryTest.java
