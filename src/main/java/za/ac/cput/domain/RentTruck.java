@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * RentCar.java
+ * RentTruck.java
  * This is the Domain program
  * @auther ZukhanyeAneleMene (219404275)
  * Date: 20 March 2024
  */
 
-public class RentCar {
+public class RentTruck {
     private int rentalID;
     private int customerID;
     private int truckID;
@@ -19,11 +19,11 @@ public class RentCar {
     private double rentalCost;
 
 
-    public RentCar() {
+    public RentTruck() {
 
     }
 
-    private RentCar (Builder builder) {
+    private RentTruck (Builder builder) {
         this.rentalID = builder.rentalID;
         this.customerID = builder.customerID;
         this.truckID = builder.truckID;
@@ -66,13 +66,13 @@ public class RentCar {
     public boolean equals(Object rent) {
         if (this == rent) return true;
         if (rent == null || getClass() != rent.getClass()) return false;
-        RentCar rentCar  = (RentCar) rent;
-        return rentalID == rentCar.rentalID
-                && Objects.equals(customerID, rentCar.customerID)
-                && Objects.equals(truckID, rentCar.truckID)
-                && Objects.equals(rentalStartDate, rentCar.rentalStartDate)
-                && Objects.equals(rentalEndDate, rentCar.rentalEndDate)
-                && Double.compare(rentalCost, rentCar.rentalCost ) == 0;
+        RentTruck rentTruck  = (RentTruck) rent;
+        return rentalID == rentTruck.rentalID
+                && Objects.equals(customerID, rentTruck.customerID)
+                && Objects.equals(truckID, rentTruck.truckID)
+                && Objects.equals(rentalStartDate, rentTruck.rentalStartDate)
+                && Objects.equals(rentalEndDate, rentTruck.rentalEndDate)
+                && Double.compare(rentalCost, rentTruck.rentalCost ) == 0;
 
     }
 
@@ -85,7 +85,7 @@ public class RentCar {
 
     @Override
     public String toString() {
-        return "RentCar{" +
+        return "RentTruck{" +
                 "rentalID='" + rentalID + '\'' +
                 ", customerID=" + customerID +
                 ", truckID=" + truckID +
@@ -136,19 +136,19 @@ public class RentCar {
             this.rentalCost = rentalCost;
             return this;
         }
-        public Builder copy(RentCar rentCar){
-            this.rentalID = rentCar.rentalID;
-            this.customerID = rentCar.customerID;
-            this.truckID = rentCar.truckID;
-            this.rentalStartDate = rentCar.rentalStartDate;
-            this.rentalEndDate = rentCar.rentalEndDate;
-            this.rentalCost = rentCar.rentalCost;
+        public Builder copy(RentTruck rentTruck){
+            this.rentalID = rentTruck.rentalID;
+            this.customerID = rentTruck.customerID;
+            this.truckID = rentTruck.truckID;
+            this.rentalStartDate = rentTruck.rentalStartDate;
+            this.rentalEndDate = rentTruck.rentalEndDate;
+            this.rentalCost = rentTruck.rentalCost;
             return this;
         }
 
-        public RentCar build() {
+        public RentTruck build() {
 
-            return new RentCar(this);
+            return new RentTruck(this);
         }
 
         // Additional methods
