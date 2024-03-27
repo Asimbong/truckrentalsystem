@@ -68,3 +68,4 @@ public class ProtectionRepository implements IProtectionRepository {
         return protectionList.remove(protectionToDelete);
     }
 }
+

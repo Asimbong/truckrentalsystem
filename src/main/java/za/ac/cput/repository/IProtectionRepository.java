@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface IProtectionRepository extends IRepository<Protection,String> {
     List<Protection> getAll();
-
 }
+
