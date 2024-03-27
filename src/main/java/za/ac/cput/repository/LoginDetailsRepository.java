@@ -13,7 +13,7 @@ import java.util.List;
 public class LoginDetailsRepository implements ILoginDetailsRepository {
     private static ILoginDetailsRepository loginDetailsRepository = null;
 
-    private ArrayList<LoginDetails> loginDetailsList;
+    public ArrayList<LoginDetails> loginDetailsList;
 
     private LoginDetailsRepository() {
 
