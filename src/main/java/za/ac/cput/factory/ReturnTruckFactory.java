@@ -14,8 +14,8 @@ import java.time.LocalTime;
  */
 
 public class ReturnTruckFactory {
-    public static ReturnTruck buildReturnTruck(int returnID, int rentalID, double overdueAmount, LocalDate dateReturn, LocalTime timeReturn) {
-        if (Helper.isNullOrEmpty(String.valueOf(returnID)) || Helper.isNullOrEmpty(String.valueOf(rentalID)) || Helper.isNullOrEmpty(String.valueOf(overdueAmount))
+    public static ReturnTruck buildReturnTruck(String returnID, int rentalID, double overdueAmount, LocalDate dateReturn, LocalTime timeReturn) {
+        if (Helper.isNullOrEmpty(returnID) || Helper.isNullOrEmpty(String.valueOf(rentalID)) || Helper.isNullOrEmpty(String.valueOf(overdueAmount))
                 || Helper.isNullOrEmpty(String.valueOf(dateReturn)) ||  Helper.isNullOrEmpty(String.valueOf(timeReturn)))
                 return null;
 
@@ -27,7 +27,7 @@ public class ReturnTruckFactory {
                 || Helper.isNullOrEmpty(String.valueOf(dateReturn)))
             return null;
 
-        int returnID = Integer.parseInt(Helper.generateId());
+        String returnID =(Helper.generateId());
 
         return new ReturnTruck.Builder().setReturnID(returnID).setRentalID(rentalID)
                 .setOverdueAmount(overdueAmount).setDateReturn(dateReturn).build();

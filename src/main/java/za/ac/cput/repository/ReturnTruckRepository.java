@@ -1,5 +1,6 @@
 package za.ac.cput.repository;
 
+import za.ac.cput.domain.Customer;
 import za.ac.cput.domain.ReturnTruck;
 
 import java.util.ArrayList;
@@ -41,12 +42,8 @@ public class ReturnTruckRepository implements IReturnTruckRepository {
         return null;
     }
 
-    @Override
-    public ReturnTruck read(String s) {
-        return null;
-    }
 
-    public ReturnTruck read(int id) {
+    public ReturnTruck read(String id) {
         for (ReturnTruck returnTruck : returnTruckList) {
             if (returnTruck.getReturnID() == (id))
                 return returnTruck;
@@ -58,8 +55,8 @@ public class ReturnTruckRepository implements IReturnTruckRepository {
 
     @Override
     public ReturnTruck update(ReturnTruck returnTruck) {
-        String returnCarID = String.valueOf(returnTruck.getReturnID());
-        if(delete(returnCarID)) {
+        String returnTruckID =returnTruck.getReturnID();
+        if(delete(returnTruckID)) {
             if (returnTruckList.add(returnTruck))
                 return returnTruck;
             else
@@ -67,6 +64,7 @@ public class ReturnTruckRepository implements IReturnTruckRepository {
         }
         return null;
     }
+
 
     @Override
     public boolean delete(String id) {
