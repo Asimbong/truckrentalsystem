@@ -10,7 +10,6 @@ public class Brand {
 
     private int brandId;
     private String brandName;
-    private String model;
     private String color;
 
     public Brand() {
@@ -19,7 +18,6 @@ public class Brand {
     private Brand(Builder builder) {
         this.brandId = builder.brandId;
         this.brandName = builder.brandName;
-        this.model = builder.model;
         this.color = builder.color;
     }
 
@@ -31,10 +29,6 @@ public class Brand {
         return brandName;
     }
 
-    public String getModel() {
-        return model;
-    }
-
     public String getColor() {
         return color;
     }
@@ -44,12 +38,12 @@ public class Brand {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Brand brand = (Brand) o;
-        return brandId == brand.brandId && Objects.equals(brandName, brand.brandName) && Objects.equals(model, brand.model) && Objects.equals(color, brand.color);
+        return brandId == brand.brandId && Objects.equals(brandName, brand.brandName)  && Objects.equals(color, brand.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brandId, brandName, model, color);
+        return Objects.hash(brandId, brandName, color);
     }
 
     @Override
@@ -57,7 +51,6 @@ public class Brand {
         return "Brand{" +
                 "brandId=" + brandId +
                 ", brandName='" + brandName + '\'' +
-                ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 '}';
     }
@@ -65,7 +58,6 @@ public class Brand {
     public static class Builder {
         private int brandId;
         private String brandName;
-        private String model;
         private String color;
 
         public Builder setBrandId(int brandId) {
@@ -78,10 +70,7 @@ public class Brand {
             return this;
         }
 
-        public Builder setModel(String model) {
-            this.model = model;
-            return this;
-        }
+      
 
         public Builder setColor(String color) {
             this.color = color;
