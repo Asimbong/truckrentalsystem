@@ -19,7 +19,7 @@ public class RentTruckFactory {
 
         if ((rentId <= 0) ||
                 Helper.isNullOrEmpty(branchName) || Helper.isNullOrEmpty(branchLocation) ||
-                Helper.isNullOrEmpty(String.valueOf(rentDate)) || !Helper.isValidEmail(String.valueOf(returnDate)) ||
+                Helper.isNullOrEmpty(String.valueOf(rentDate)) || !Helper.isNullOrEmpty(String.valueOf(returnDate)) ||
                 (totalCost <= 0) || (customerID <= 0))
 
             return null;
