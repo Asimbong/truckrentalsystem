@@ -5,6 +5,14 @@ import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 import java.util.Objects;
+
+/**
+ * RentTruck.java
+ * This is the domain class
+ * @author Thandolwethu Zamasiba Khoza (221797289)
+ * Date: 03 May 2024
+ */
+
 @Entity
 public class RentTruck {
     @Id
@@ -13,14 +21,14 @@ public class RentTruck {
     String branchLocation;
     LocalDate rentDate;
     LocalDate returnDate;
-    Double totalCost;
+    double totalCost;
     int customerID;
 
-    public RentTruck() {
+    protected RentTruck() {
 
     }
 
-    public RentTruck(Builder builder) {
+    private RentTruck(Builder builder) {
         this.rentId = builder.rentId;
         this.branchName = builder.branchName;
         this.branchLocation = builder.branchLocation;
@@ -30,32 +38,32 @@ public class RentTruck {
         this.customerID = builder.customerID;
     }
 
-    public void setRentId(int rentId) {
-        this.rentId = rentId;
+    public int getRentId() {
+        return rentId;
     }
 
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
+    public String getBranchName() {
+        return branchName;
     }
 
-    public void setBranchLocation(String branchLocation) {
-        this.branchLocation = branchLocation;
+    public String getBranchLocation() {
+        return branchLocation;
     }
 
-    public void setRentDate(LocalDate rentDate) {
-        this.rentDate = rentDate;
+    public LocalDate getRentDate() {
+        return rentDate;
     }
 
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
+    public LocalDate getReturnDate() {
+        return returnDate;
     }
 
-    public void setTotalCost(Double totalCost) {
-        this.totalCost = totalCost;
+    public double getTotalCost() {
+        return totalCost;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public int getCustomerID() {
+        return customerID;
     }
 
     @Override
@@ -90,7 +98,7 @@ public class RentTruck {
         String branchLocation;
         LocalDate rentDate;
         LocalDate returnDate;
-        Double totalCost;
+        double totalCost;
         int customerID;
 
         public Builder setRentId(int rentId) {
@@ -118,13 +126,24 @@ public class RentTruck {
             return this;
         }
 
-        public Builder setTotalCost(Double totalCost) {
+        public Builder setTotalCost(double totalCost) {
             this.totalCost = totalCost;
             return this;
         }
 
         public Builder setCustomerID(int customerID) {
             this.customerID = customerID;
+            return this;
+        }
+
+        public Builder copy(RentTruck rentTruck) {
+            this.rentId = rentTruck.rentId;
+            this.branchName = rentTruck.branchName;
+            this.branchLocation = rentTruck.branchLocation;
+            this.rentDate = rentTruck.rentDate;
+            this.returnDate = rentTruck.returnDate;
+            this.totalCost = rentTruck.totalCost;
+            this.customerID = rentTruck.customerID;
             return this;
         }
 
