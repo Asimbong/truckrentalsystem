@@ -4,7 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
-
+/**
+ * Employee.java
+ * This is the Domain program
+ * @aurthor Asimbonge Mbende (221090754)
+ * Date: 03 May 2024
+ */
 @Entity
 public class Employee {
     @Id
