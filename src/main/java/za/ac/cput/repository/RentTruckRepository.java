@@ -3,5 +3,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.domain.RentTruck;
 
 
-public interface RentTruckRepository  extends JpaRepository<RentTruck,String> {
+public interface RentTruckRepository extends JpaRepository<RentTruck,String> {
 }
