@@ -2,7 +2,12 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.Employee;
 import za.ac.cput.util.Helper;
-
+/**
+ * EmployeeFactory.java
+ * This is the factory class
+ * @aurthor Asimbonge Mbende (221090754)
+ * Date: 03 May 2024
+ */
 public class EmployeeFactory {
     public static Employee buildEmployee(String employeeNumber, String firstName, String lastName,
                                          String email, String employeeType) {
