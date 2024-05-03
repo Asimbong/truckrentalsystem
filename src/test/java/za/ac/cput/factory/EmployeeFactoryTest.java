@@ -4,7 +4,12 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Employee;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/**
+ * EmployeeFactoryTest.java
+ * This is the factory test class
+ * @aurthor Asimbonge Mbende (221090754)
+ * Date: 03 May 2024
+ */
 class EmployeeFactoryTest {
 
     @Test
