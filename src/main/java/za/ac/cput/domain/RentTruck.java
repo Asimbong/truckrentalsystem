@@ -151,5 +151,6 @@ public class RentTruck {
             return new RentTruck(this);
         }
     }
-    }
+}
+
 
