@@ -1,9 +1,14 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
 public class RentTruck {
+    @Id
     int rentId;
     String branchName;
     String branchLocation;
