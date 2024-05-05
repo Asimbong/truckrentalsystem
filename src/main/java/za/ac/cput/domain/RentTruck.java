@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * RentTruckFactory.java
- * This is the Factory class
+ * RentTruck.java
+ * This is the domain class
  * @author Thandolwethu Zamasiba Khoza (221797289)
  * Date: 03 May 2024
  */
