@@ -1,12 +1,12 @@
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.Employee;
 import za.ac.cput.domain.RentTruck;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * RentTruckFactoryTest.java
@@ -29,6 +29,20 @@ public class RentTruckFactoryTest {
                 321
         );
         assertNotNull(rentTruck);
+        System.out.println(rentTruck);
+    }
+    @Test
+    void buildRentTruckFail() {
+        RentTruck rentTruck = RentTruckFactory.buildRentTruck(
+                287,
+                "Wiggle",
+                "Cape Town",
+                LocalDate.of(2024, 4, 24),
+                LocalDate.of(2024, 4, 28),
+                5085.0,
+                321
+        );
+        assertNull(rentTruck);
         System.out.println(rentTruck);
     }
 

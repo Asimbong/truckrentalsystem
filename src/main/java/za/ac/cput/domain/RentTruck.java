@@ -17,12 +17,12 @@ import java.util.Objects;
 public class RentTruck {
     @Id
     int rentId;
-    String branchName;
-    String branchLocation;
-    LocalDate rentDate;
-    LocalDate returnDate;
-    double totalCost;
-    int customerID;
+    private String branchName;
+    private String branchLocation;
+    private LocalDate rentDate;
+    private LocalDate returnDate;
+    private double totalCost;
+    private int customerID;
 
     protected RentTruck() {
 
@@ -94,12 +94,12 @@ public class RentTruck {
 
     public static class Builder {
         int rentId;
-        String branchName;
-        String branchLocation;
-        LocalDate rentDate;
-        LocalDate returnDate;
-        double totalCost;
-        int customerID;
+        private String branchName;
+        private String branchLocation;
+        private LocalDate rentDate;
+        private LocalDate returnDate;
+        private double totalCost;
+        private int customerID;
 
         public Builder setRentId(int rentId) {
             this.rentId = rentId;

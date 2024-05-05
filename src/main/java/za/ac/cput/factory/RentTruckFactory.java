@@ -4,6 +4,7 @@ import za.ac.cput.domain.RentTruck;
 import za.ac.cput.util.Helper;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * RentTruckFactory.java
@@ -13,21 +14,27 @@ import java.time.LocalDate;
  */
 
 public class RentTruckFactory {
-    public static RentTruck buildRentTruck (int rentId, String branchName, String branchLocation,
-                                            LocalDate rentDate, LocalDate returnDate,
-                                            double totalCost, int customerID) {
-
-        if ((rentId <= 0) ||
-                Helper.isNullOrEmpty(branchName) || Helper.isNullOrEmpty(branchLocation) ||
-                Helper.isNullOrEmpty(String.valueOf(rentDate)) || !Helper.isNullOrEmpty(String.valueOf(returnDate)) ||
-                (totalCost <= 0) || (customerID <= 0))
-
+    public static RentTruck buildRentTruck(int rentId, String branchName, String branchLocation,
+                                           LocalDate rentDate, LocalDate returnDate, double totalCost,
+                                           int customerID) {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Helper.DateValidatorUsingLocalDate dateValidator = new Helper.DateValidatorUsingLocalDate(dateFormatter);
+        if (rentId < 0 ||
+                Helper.isNullOrEmpty(branchName) ||
+                Helper.isNullOrEmpty(branchLocation) ||
+                rentDate == null || !dateValidator.isValid(rentDate.toString()) ||
+                returnDate == null || !dateValidator.isValid(returnDate.toString()) ||
+                customerID < 0) {
             return null;
+        }
 
-        return new RentTruck.Builder().setRentId(rentId)
+        return new RentTruck.Builder()
+                .setRentId(rentId)
                 .setBranchName(branchName)
+                .setBranchLocation(branchLocation)
                 .setRentDate(rentDate)
                 .setReturnDate(returnDate)
+                .setTotalCost(totalCost)
                 .setCustomerID(customerID)
                 .build();
     }
