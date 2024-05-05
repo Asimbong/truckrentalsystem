@@ -10,7 +10,7 @@ import za.ac.cput.domain.Customer;
  * Date: 03 May 2024
  */
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer,String> {
+public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 }
 
 
