@@ -109,7 +109,6 @@ public class Truck {
     }
 
     public static class Builder {
-
         private String vin;
         private String model;
         private String year;
