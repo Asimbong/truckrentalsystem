@@ -19,17 +19,16 @@ public class RentTruckFactory {
                                            int customerID) {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Helper.DateValidatorUsingLocalDate dateValidator = new Helper.DateValidatorUsingLocalDate(dateFormatter);
-        if (rentId < 0 ||
+        if (Helper.isIntNotValid(rentId) ||
                 Helper.isNullOrEmpty(branchName) ||
                 Helper.isNullOrEmpty(branchLocation) ||
                 rentDate == null || !dateValidator.isValid(rentDate.toString()) ||
                 returnDate == null || !dateValidator.isValid(returnDate.toString()) ||
-                customerID < 0) {
+                Helper.isDoubleNotNull(totalCost) || Helper.isIntNotValid(customerID)) {
+
             return null;
         }
-
-        return new RentTruck.Builder()
-                .setRentId(rentId)
+        return new RentTruck.Builder().setRentId(rentId)
                 .setBranchName(branchName)
                 .setBranchLocation(branchLocation)
                 .setRentDate(rentDate)
