@@ -72,4 +72,34 @@ public class Helper {
             }
         }
     }
+
+    public static boolean isValidAddress(String address){
+        String streetPattern = "^[a-zA-Z0-9\\s,.-]{1,50}$";
+        String cityPattern = "^[a-zA-Z]{1,50}$";
+        String statePattern = "^[a-zA-Z]{2}$";
+        String zipPattern = "^[0-9]{5}(?:-[0-9]{4})?$";
+
+        String[] addressComponents = address.split(",");
+        if (addressComponents.length < 1 || addressComponents.length > 4) {
+            return false;
+        }
+        if (addressComponents.length == 1) {
+            return addressComponents[0].matches("^[a-zA-Z0-9\\s,.-]{1,50}$");
+        }
+
+        if (!addressComponents[0].matches(streetPattern)) {
+            return false;
+        }
+        if (!addressComponents[1].matches(cityPattern)) {
+            return false;
+        }
+        if (!addressComponents[2].matches(statePattern)) {
+            return false;
+        }
+        if (!addressComponents[3].matches(zipPattern)) {
+            return false;
+        }
+
+        return true;
+    }
 }
