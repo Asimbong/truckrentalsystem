@@ -16,13 +16,13 @@ public class Helper {
     public static boolean isNullOrEmpty(String s) {
         if (s == null || s.isEmpty())
             return true;
-            return false;
+        return false;
     }
 
     public static boolean isIntNotValid(int i) {    //checks int
         if (i < 0)
             return true;
-            return false;
+        return false;
     }
 
     public static boolean isDoubleNotNull(double d) {    //checks double

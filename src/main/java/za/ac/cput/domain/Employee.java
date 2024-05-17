@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
 import java.util.Objects;
 /**
@@ -10,25 +10,18 @@ import java.util.Objects;
  * @aurthor Asimbonge Mbende (221090754)
  * Date: 03 May 2024
  */
-@Entity
+@MappedSuperclass
 public class Employee {
     @Id
-    private String employeeNumber;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String employeeType;
+    protected String employeeNumber;
+    protected String firstName;
+    protected String lastName;
+    protected String email;
+    protected String employeeType;
 
     protected Employee() {
     }
 
-    private Employee(Builder builder) {
-        this.employeeNumber = builder.employeeNumber;
-        this.firstName = builder.firstName;
-        this.lastName = builder.lastName;
-        this.email = builder.email;
-        this.employeeType = builder.employeeType;
-    }
 
     public String getEmployeeNumber() {
         return employeeNumber;
@@ -65,58 +58,17 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeNumber='" + employeeNumber + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", employeeType='" + employeeType + '\'' +
-                '}';
+        return String.format(
+                "Employee Details:\n" +
+                        "Employee Number: %s\n" +
+                        "First Name: %s\n" +
+                        "Last Name: %s\n" +
+                        "Email: %s\n" +
+                        "Employee Type: %s\n",
+                employeeNumber, firstName, lastName, email, employeeType
+        );
     }
 
-    public static class Builder {
-        private String employeeNumber;
-        private String firstName;
-        private String lastName;
-        private String email;
-        private String employeeType;
 
-        public Builder setEmployeeNumber(String employeeNumber) {
-            this.employeeNumber = employeeNumber;
-            return this;
-        }
 
-        public Builder setFirstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-
-        public Builder setLastName(String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Builder setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-
-        public Builder setEmployeeType(String employeeType) {
-            this.employeeType = employeeType;
-            return this;
-        }
-
-        public Builder copy(Employee employee) {
-            this.employeeNumber = employee.employeeNumber;
-            this.firstName = employee.firstName;
-            this.lastName = employee.lastName;
-            this.email = employee.email;
-            this.employeeType = employee.employeeType;
-            return this;
-        }
-
-        public Employee build() {
-            return new Employee(this);
-        }
-    }
 }
