@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
      @Test
      void buildMechanicWithFail() {
-         Mechanic mechanic = MechanicFactory.buildMechanic(0, "", false,
+         Mechanic mechanic = MechanicFactory.buildMechanic(-1, "", false,
                  null, "", "", "benn7eGmh.co.za", "");
          assertNotNull(mechanic);
          System.out.println(mechanic.toString());
