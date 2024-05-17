@@ -2,6 +2,8 @@ package za.ac.cput.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -17,35 +19,28 @@ import java.util.Objects;
 public class RentTruck {
     @Id
     private int rentId;
-    private String branchName;
-    private String branchLocation;
     private LocalDate rentDate;
     private LocalDate returnDate;
     private  double totalCost;
     private int customerID;
 
+    @ManyToOne
+    @JoinColumn(name = "branch_Id")
+    private Branch branch;
+
     protected RentTruck() {
     }
     private   RentTruck(Builder builder){
         this.rentId=builder.rentId;
-        this.branchName=builder.branchName;
-        this.branchLocation=builder.branchLocation;
         this.rentDate=builder.rentDate;
         this.returnDate=builder.returnDate;
         this.totalCost=builder.totalCost;
         this.customerID=builder.customerID;
+        this.branch = builder.branch;
     }
 
     public int getRentId() {
         return rentId;
-    }
-
-    public String getBranchName() {
-        return branchName;
-    }
-
-    public String getBranchLocation() {
-        return branchLocation;
     }
 
     public LocalDate getRentDate() {
@@ -64,53 +59,46 @@ public class RentTruck {
         return customerID;
     }
 
+    public Branch getBranch() {
+        return branch;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RentTruck rentTruck = (RentTruck) o;
-        return rentId == rentTruck.rentId && Double.compare(totalCost, rentTruck.totalCost) == 0 && customerID == rentTruck.customerID && Objects.equals(branchName, rentTruck.branchName) && Objects.equals(branchLocation, rentTruck.branchLocation) && Objects.equals(rentDate, rentTruck.rentDate) && Objects.equals(returnDate, rentTruck.returnDate);
+        return rentId == rentTruck.rentId && Double.compare(totalCost, rentTruck.totalCost) == 0 && customerID == rentTruck.customerID && Objects.equals(rentDate, rentTruck.rentDate) && Objects.equals(returnDate, rentTruck.returnDate) && Objects.equals(branch, rentTruck.branch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rentId, branchName, branchLocation, rentDate, returnDate, totalCost, customerID);
+        return Objects.hash(rentId, rentDate, returnDate, totalCost, customerID, branch);
     }
 
     @Override
     public String toString() {
         return "RentTruck{" +
                 "rentId=" + rentId +
-                ", branchName='" + branchName + '\'' +
-                ", branchLocation='" + branchLocation + '\'' +
                 ", rentDate=" + rentDate +
                 ", returnDate=" + returnDate +
                 ", totalCost=" + totalCost +
                 ", customerID=" + customerID +
+                ", branch=" + branch +
                 '}';
     }
 
     public static class Builder{
         private int rentId;
-        private String branchName;
-        private String branchLocation;
         private LocalDate rentDate;
         private LocalDate returnDate;
         private  double totalCost;
         private int customerID;
 
+        private Branch branch;
+
         public Builder setRentId(int rentId) {
             this.rentId = rentId;
-            return this;
-        }
-
-        public Builder setBranchName(String branchName) {
-            this.branchName = branchName;
-            return this;
-        }
-
-        public Builder setBranchLocation(String branchLocation) {
-            this.branchLocation = branchLocation;
             return this;
         }
 
@@ -134,15 +122,18 @@ public class RentTruck {
             return this;
         }
 
-        public Builder copy(RentTruck rentTruck){
+        public Builder setBranch(Branch branch) {
+            this.branch = branch;
+            return this;
+        }
 
+        public Builder copy(RentTruck rentTruck){
             this.rentId=rentTruck.rentId;
-            this.branchName=rentTruck.branchName;
-            this.branchLocation=rentTruck.branchLocation;
             this.rentDate=rentTruck.rentDate;
             this.returnDate=rentTruck.returnDate;
             this.totalCost=rentTruck.totalCost;
             this.customerID=rentTruck.customerID;
+            this.branch = rentTruck.branch;
             return this;
         }
 
