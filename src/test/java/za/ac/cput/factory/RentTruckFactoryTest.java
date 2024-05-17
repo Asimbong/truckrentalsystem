@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * RentTruckFactoryTest.java
  * This is the FactoryTest class
  * @author Thandolwethu Zamasiba Khoza (221797289)
- * Date: 03 May 2024
+ * Date: 03 May 2024 & 16 May 2024
  */
 
 public class RentTruckFactoryTest {
@@ -31,7 +31,6 @@ public class RentTruckFactoryTest {
         System.out.println(rentTruck);
     }
     @Test
-    @Disabled
     void buildRentTruckFail() {
         RentTruck rentTruck = RentTruckFactory.buildRentTruck(
                 287,
@@ -46,7 +45,6 @@ public class RentTruckFactoryTest {
     }
 
     @Test
-    @Disabled
     void buildRentTruckFail2() {
         RentTruck rentTruck = RentTruckFactory.buildRentTruck(
                 287,
@@ -60,7 +58,6 @@ public class RentTruckFactoryTest {
         System.out.println(rentTruck);
     }
     @Test
-    @Disabled
     void rentTruckIdentityFail() {
         RentTruck rentTruck = RentTruckFactory.buildRentTruck(
                 287,
@@ -83,7 +80,6 @@ public class RentTruckFactoryTest {
     }
 
     @Test
-    @Disabled
     void rentTruckIdentityPass() {
         RentTruck rentTruck = RentTruckFactory.buildRentTruck(
                 287,

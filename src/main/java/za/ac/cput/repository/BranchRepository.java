@@ -1,6 +1,7 @@
 package za.ac.cput.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Branch;
 
 /**
@@ -10,5 +11,6 @@ import za.ac.cput.domain.Branch;
  * Date: 16 May 2024
  */
 
+@Repository
 public interface BranchRepository extends JpaRepository<Branch, Integer> {
 }
