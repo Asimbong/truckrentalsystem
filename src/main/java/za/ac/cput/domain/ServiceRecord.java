@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 /**
  * @aurthor Malesela Modiba (222140275)
- * Date: 04 May 2024
+ * Date: 17 May 2024
  */
 @Entity
 public class ServiceRecord {

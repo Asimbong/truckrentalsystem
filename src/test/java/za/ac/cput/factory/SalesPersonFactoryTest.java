@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.SalesPerson;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/*  Completed By Malesela Modiba
+    17 May 2024
+ */
 public class SalesPersonFactoryTest {
     @Test
     void testBuildSalesPerson() {

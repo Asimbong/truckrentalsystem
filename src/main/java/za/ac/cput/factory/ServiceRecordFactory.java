@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * @aurthor Malesela Modiba (222140275)
- * Date: 04 May 2024
+ * Date:17 May 2024
  */
 public class ServiceRecordFactory {
     public static ServiceRecord buildServiceRecord (int serviceID, LocalDate serviceDate, String serviceType,

@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
+/*  Completed By Malesela Modiba
+    17 May 2024
+ */
 
 @Entity
 public class SalesPerson extends Employee {

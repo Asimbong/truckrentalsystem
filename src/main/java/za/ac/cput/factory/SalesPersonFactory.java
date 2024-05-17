@@ -2,7 +2,9 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.SalesPerson;
 import za.ac.cput.util.Helper;
-
+/*  Completed By Malesela Modiba
+    17 May 2024
+ */
 public class SalesPersonFactory {
     public static SalesPerson buildSalesPerson(String employeeNumber,
                                                String firstName,
