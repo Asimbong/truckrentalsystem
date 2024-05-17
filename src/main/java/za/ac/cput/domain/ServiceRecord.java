@@ -1,4 +1,7 @@
 package za.ac.cput.domain;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
@@ -7,18 +10,21 @@ import java.util.Objects;
  * @aurthor Malesela Modiba (222140275)
  * Date: 04 May 2024
  */
+@Entity
 public class ServiceRecord {
     @Id
-    private static int serviceID;
-    private static LocalDate serviceDate;
-    private static String serviceType;
-    private static String description;
-    private static double cost;
-    private static String mechanic;
-    private static LocalDate nextServiceDate;
-    private static String vin;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    public ServiceRecord() {
+    private  static int serviceID;
+    private  static LocalDate serviceDate;
+    private  static String serviceType;
+    private   static String description;
+    private  static double cost;
+    private  static String mechanic;
+    private  static LocalDate nextServiceDate;
+    private  static String vin;
+
+    protected ServiceRecord() {
     }
 
     private ServiceRecord(ServiceRecord.Builder builder) {
