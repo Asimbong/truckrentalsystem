@@ -11,24 +11,25 @@ import za.ac.cput.util.Helper;
  * Date: 16 May 2024
  */
 public class MechanicFactory {
-    public static Mechanic buildMechanic(int mechanicId, String specialization, String availability, String employeeNumber, String firstName, String lastName,
+    public static Mechanic buildMechanic(int mechanicId, String specialization, boolean availability, String employeeNumber, String firstName, String lastName,
                                          String email, String employeeType) {
-        if ((mechanicId <= 0) ||
+        if (
+                Helper.isIntNotValid(mechanicId ) ||
                 Helper.isNullOrEmpty(specialization) ||
-                Helper.isNullOrEmpty(availability) ||
+                Helper.isNullOrEmpty(String.valueOf(availability)) ||
                 Helper.isNullOrEmpty(employeeNumber) ||
                 Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) ||
                 Helper.isNullOrEmpty(email) || !Helper.isValidEmail(email) ||
                 Helper.isNullOrEmpty(employeeType))
             return null;
-        return new Mechanic.Builder().setMechanicId(mechanicId)
-                .setSpecialization(specialization)
-                .setAvailability(availability)
-                .setEmployeeNumber(employeeNumber)
+        return new Mechanic.Builder().setEmployeeNumber(employeeNumber)
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
                 .setEmployeeType(employeeType)
+                .setMechanicId(mechanicId)
+                .setSpecialization(specialization)
+                .setAvailability(availability)
                 .build();
     }
 

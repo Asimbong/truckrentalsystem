@@ -14,23 +14,25 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * This is the factory test class
  * @aurthor Zukhanye Anele Mene (219404275)
  * Date: 16 May 2024
- */
-class MechanicFactoryTest {
+ **/
+  class MechanicFactoryTest {
 
-    @Test
-    void buildMechanic() {
-        Mechanic mechanic = MechanicFactory.buildMechanic(1, "Engine", "Yes",
-                "011", "Zukhanye"  , "Mene", "bennie@gmail.com", "Mechanic");
-        assertNotNull(mechanic);
-        System.out.println(mechanic.toString());
-    }
+     @Test
+      void buildMechanic() {
+          Mechanic mechanic = MechanicFactory.buildMechanic(1, "Engine", true,
+                  "011", "Zukhanye"  , "Mene", "bennie@gmail.com", "Mechanic");
+          assertNotNull(mechanic);
+          System.out.println(mechanic.toString());
+      }
 
-    @Test
-    void buildCustomerWithFail() {
-        Mechanic mechanic = MechanicFactory.buildMechanic(2, "Engine", "Yes",
-                "011", "Zukhanye"  , "Mene", "bennie@gmail.com", "Mechanic");
-        assertNotNull(mechanic);
-        System.out.println(mechanic.toString());
+     @Test
+     void buildMechanicWithFail() {
+         Mechanic mechanic = MechanicFactory.buildMechanic(0, "", false,
+                 null, "", "", "benn7eGmh.co.za", "");
+         assertNotNull(mechanic);
+         System.out.println(mechanic.toString());
     }
 }
+
+
 

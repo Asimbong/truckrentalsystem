@@ -17,7 +17,7 @@ public class Mechanic extends Employee {
 
     private String specialization;
 
-    private String availability;
+    private boolean availability;
 
     private Employee employee;
 
@@ -26,15 +26,14 @@ public class Mechanic extends Employee {
     }
 
     private Mechanic (Builder builder) {
-        this.mechanicId = builder.mechanicId;
-        this.specialization = builder.specialization;
-        this.availability = builder.availability;
         this.employeeNumber = builder.employeeNumber;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.email = builder.email;
         this.employeeType = builder.employeeType;
-
+        this.mechanicId = builder.mechanicId;
+        this.specialization = builder.specialization;
+        this.availability = builder.availability;
 
     }
 
@@ -46,7 +45,7 @@ public class Mechanic extends Employee {
         return specialization;
     }
 
-    public String getAvailability() {
+    public boolean getAvailability() {
         return availability;
     }
 
@@ -68,27 +67,28 @@ public class Mechanic extends Employee {
     @Override
     public String toString() {
         return "Mechanic{" +
-                "MechanicId='" + mechanicId + '\'' +
-                ", Specialization='" + specialization + '\'' +
-                ", Availability='" + availability + '\'' +
                 "employeeNumber='" + employeeNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", employeeType='" + employeeType + '\'' +
+                "MechanicId='" + mechanicId + '\'' +
+                ", Specialization='" + specialization + '\'' +
+                ", Availability='" + availability + '\'' +
                 '}';
     }
 
     public static class Builder {
 
-        private int mechanicId;
-        private String specialization;
-        private String availability;
         private String employeeNumber;
         private String firstName;
         private String lastName;
         private String email;
         private String employeeType;
+
+        private int mechanicId;
+        private String specialization;
+        private boolean availability;
 
 
         public Builder setMechanicId(int mechanicId) {
@@ -101,7 +101,7 @@ public class Mechanic extends Employee {
             return this;
         }
 
-        public Builder setAvailability(String availability) {
+        public Builder setAvailability(boolean availability) {
             this.availability = availability;
             return this;
         }
@@ -132,14 +132,14 @@ public class Mechanic extends Employee {
         }
 
         public Builder copy(Mechanic mechanic) {
-            this.mechanicId = mechanic.mechanicId;
-            this.specialization = mechanic.specialization;
-            this.availability = mechanic.availability;
             this.employeeNumber = mechanic.employeeNumber;
             this.firstName = mechanic.firstName;
             this.lastName = mechanic.lastName;
             this.email = mechanic.email;
             this.employeeType = mechanic.employeeType;
+            this.mechanicId = mechanic.mechanicId;
+            this.specialization = mechanic.specialization;
+            this.availability = mechanic.availability;
             return this;
         }
 
