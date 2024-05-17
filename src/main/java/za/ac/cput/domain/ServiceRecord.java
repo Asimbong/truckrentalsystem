@@ -15,14 +15,14 @@ public class ServiceRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private  static int serviceID;
-    private  static LocalDate serviceDate;
-    private  static String serviceType;
-    private   static String description;
-    private  static double cost;
-    private  static String mechanic;
-    private  static LocalDate nextServiceDate;
-    private  static String vin;
+    private  int serviceID;
+    private  LocalDate serviceDate;
+    private   String serviceType;
+    private    String description;
+    private   double cost;
+    private   String mechanic;
+    private   LocalDate nextServiceDate;
+    private   String vin;
 
     protected ServiceRecord() {
     }
@@ -74,20 +74,13 @@ public class ServiceRecord {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ServiceRecord serviceRecord = (ServiceRecord) o;
-        return serviceID == ServiceRecord.serviceID
-                && Objects.equals(serviceDate, ServiceRecord.serviceDate)
-                && Objects.equals(serviceType, ServiceRecord.serviceType)
-                && Objects.equals(description, ServiceRecord.description)
-                && Objects.equals(cost, ServiceRecord.cost)
-                && Objects.equals(mechanic, ServiceRecord.mechanic)
-                && Objects.equals(nextServiceDate, ServiceRecord.nextServiceDate)
-                && Objects.equals(vin, ServiceRecord.vin);
+        ServiceRecord that = (ServiceRecord) o;
+        return serviceID == that.serviceID && Double.compare(cost, that.cost) == 0 && Objects.equals(serviceDate, that.serviceDate) && Objects.equals(serviceType, that.serviceType) && Objects.equals(description, that.description) && Objects.equals(mechanic, that.mechanic) && Objects.equals(nextServiceDate, that.nextServiceDate) && Objects.equals(vin, that.vin);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceID, serviceDate, serviceType, description, cost, mechanic, nextServiceDate,vin);
+        return Objects.hash(serviceID, serviceDate, serviceType, description, cost, mechanic, nextServiceDate, vin);
     }
 
     @Override
