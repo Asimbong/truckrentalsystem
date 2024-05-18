@@ -36,6 +36,29 @@ public class Branch {
         this.rentTrucks = builder.rentTrucks;
     }
 
+    public int getBranchId() {
+        return branchId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public List<RentTruck> getRentTrucks() {
+        return rentTrucks;
+    }
 
     @Override
     public boolean equals(Object o) {
