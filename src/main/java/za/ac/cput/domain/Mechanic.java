@@ -12,14 +12,11 @@ import java.util.Objects;
  */
 @Entity
 public class Mechanic extends Employee {
-    @Id
-    private int mechanicId;
 
     private String specialization;
 
     private boolean availability;
 
-    private Employee employee;
 
 
     public Mechanic() {
@@ -31,15 +28,11 @@ public class Mechanic extends Employee {
         this.lastName = builder.lastName;
         this.email = builder.email;
         this.employeeType = builder.employeeType;
-        this.mechanicId = builder.mechanicId;
         this.specialization = builder.specialization;
         this.availability = builder.availability;
 
     }
 
-    public int getMechanicId() {
-        return mechanicId;
-    }
 
     public String getSpecialization() {
         return specialization;
@@ -56,12 +49,12 @@ public class Mechanic extends Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Mechanic mechanic = (Mechanic) o;
-        return Objects.equals(mechanicId, mechanic.mechanicId) && Objects.equals(specialization, mechanic.specialization) && Objects.equals(availability, mechanic.availability);
+        return  Objects.equals(specialization, mechanic.specialization) && Objects.equals(availability, mechanic.availability);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mechanicId, specialization, availability);
+        return Objects.hash( specialization, availability);
     }
 
     @Override
@@ -72,7 +65,6 @@ public class Mechanic extends Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", employeeType='" + employeeType + '\'' +
-                "MechanicId='" + mechanicId + '\'' +
                 ", Specialization='" + specialization + '\'' +
                 ", Availability='" + availability + '\'' +
                 '}';
@@ -86,15 +78,10 @@ public class Mechanic extends Employee {
         private String email;
         private String employeeType;
 
-        private int mechanicId;
         private String specialization;
         private boolean availability;
 
 
-        public Builder setMechanicId(int mechanicId) {
-            this.mechanicId = mechanicId;
-            return this;
-        }
 
         public Builder setSpecialization(String specialization) {
             this.specialization = specialization;
@@ -137,7 +124,6 @@ public class Mechanic extends Employee {
             this.lastName = mechanic.lastName;
             this.email = mechanic.email;
             this.employeeType = mechanic.employeeType;
-            this.mechanicId = mechanic.mechanicId;
             this.specialization = mechanic.specialization;
             this.availability = mechanic.availability;
             return this;
