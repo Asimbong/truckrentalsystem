@@ -1,22 +1,32 @@
 package za.ac.cput.factory;
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Manager;
+import za.ac.cput.domain.SalesPerson;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *Truck.java
- * This is Truck Domain program
- * @aurthor Ayanda Phumzile Khoza (218057172)
- * Date: 07 May 2024
- * */
-
-
 class ManagerFactoryTest {
+
     @Test
-    void createManager() {
-        Manager createManager = ManagerFactory.buildManager("Mandla", "Masinge", "phumi@1998");
-        assertNull(createManager);
-        System.out.println("Created: " + createManager);
+    void buildManager() {
+        Manager manager = ManagerFactory.buildManager("13142412",
+                "Malesela",
+                "Modiba",
+                "Modiba@gmail.com",
+                500,
+                10);
+        assertNotNull(manager);
+        System.out.println(manager);
+    }@Test
+    void buildManagerFail() {
+        Manager manager = ManagerFactory.buildManager("",
+                "Malesela",
+                "Modiba",
+                "Modibagmail.com",
+                500,
+                10);
+        assertNotNull(manager);
+        System.out.println(manager);
     }
 }
-
