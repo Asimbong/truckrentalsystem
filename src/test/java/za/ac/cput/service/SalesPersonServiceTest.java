@@ -11,7 +11,9 @@ import za.ac.cput.factory.SalesPersonFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/*  Completed By Malesela Modiba
+    19 May 2024
+ */
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest
 class SalesPersonServiceTest {

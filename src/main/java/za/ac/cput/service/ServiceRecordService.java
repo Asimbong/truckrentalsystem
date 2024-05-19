@@ -7,7 +7,9 @@ import za.ac.cput.repository.ServiceRecordRepository;
 
 import java.util.Set;
 import java.util.stream.Collectors;
-
+/*  Completed By Malesela Modiba
+    19 May 2024
+ */
 @Service
 public  class ServiceRecordService implements IServiceRecordService {
     private ServiceRecordRepository serviceRecordRepository;

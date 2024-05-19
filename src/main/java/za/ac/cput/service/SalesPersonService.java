@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.SalesPerson;
 import za.ac.cput.repository.SalesPersonRepository;
-
+/*  Completed By Malesela Modiba
+    19 May 2024
+ */
 import java.util.Set;
 import java.util.stream.Collectors;
 @Service
