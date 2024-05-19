@@ -12,5 +12,7 @@ import java.util.Set;
  * Date: 18 May 2024
  */
 public interface  IMechanicService extends IService<Mechanic,Integer>{
+
+    Mechanic update(Mechanic mechanic);
     Set<Mechanic> getAll();
 }
