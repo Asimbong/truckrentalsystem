@@ -19,16 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
      @Test
       void buildMechanic() {
-          Mechanic mechanic = MechanicFactory.buildMechanic(1, "Engine", true,
-                  "011", "Zukhanye"  , "Mene", "bennie@gmail.com", "Mechanic");
+          Mechanic mechanic = MechanicFactory.buildMechanic("001","Zukhanye", "Mene", "bennie@gmail.com", "Mechanic", "Engen" , true);
           assertNotNull(mechanic);
           System.out.println(mechanic.toString());
       }
 
      @Test
      void buildMechanicWithFail() {
-         Mechanic mechanic = MechanicFactory.buildMechanic(-1, "", false,
-                 null, "", "", "benn7eGmh.co.za", "");
+         Mechanic mechanic = MechanicFactory.buildMechanic("001","Zukhanye", "Mene", "bennie8gmail.om", "Mechanic", "" , true);
          assertNotNull(mechanic);
          System.out.println(mechanic.toString());
     }

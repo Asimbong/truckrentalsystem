@@ -11,10 +11,9 @@ import za.ac.cput.util.Helper;
  * Date: 16 May 2024
  */
 public class MechanicFactory {
-    public static Mechanic buildMechanic(int mechanicId, String specialization, boolean availability, String employeeNumber, String firstName, String lastName,
-                                         String email, String employeeType) {
+    public static Mechanic buildMechanic(  String employeeNumber, String firstName, String lastName,
+                                         String email, String employeeType, String specialization, boolean availability) {
         if (
-                Helper.isIntNotValid(mechanicId ) ||
                 Helper.isNullOrEmpty(specialization) ||
                 Helper.isNullOrEmpty(String.valueOf(availability)) ||
                 Helper.isNullOrEmpty(employeeNumber) ||
@@ -27,7 +26,6 @@ public class MechanicFactory {
                 .setLastName(lastName)
                 .setEmail(email)
                 .setEmployeeType(employeeType)
-                .setMechanicId(mechanicId)
                 .setSpecialization(specialization)
                 .setAvailability(availability)
                 .build();

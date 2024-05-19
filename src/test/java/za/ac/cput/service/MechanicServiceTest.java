@@ -25,20 +25,19 @@ class MechanicServiceTest {
 
     @Autowired
     private MechanicService   mechanicService ;
-    private Mechanic mechanic = MechanicFactory.buildMechanic(1, "Engine", true
-            , "001","Anda", "Cakes", "bennie@gmail.com", "Mechanic");
+    private Mechanic mechanic =  MechanicFactory.buildMechanic("001","Zukhanye", "Mene", "bennie@gmail.com", "Mechanic", "Engen" , true);
 
 
     @Test
     void a_create() {
         Mechanic createdMechanic = mechanicService.create(mechanic);
-        assertEquals(mechanic.getMechanicId(), createdMechanic.getMechanicId());
+        assertEquals(mechanic.getEmployeeNumber(), createdMechanic.getEmployeeNumber());
         System.out.println("Created Mechanic: " + createdMechanic);
     }
 
     @Test
     void b_read() {
-        Mechanic read = mechanicService.read(mechanic.getMechanicId());
+        Mechanic read = mechanicService.read(mechanic.getEmployeeNumber());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -54,7 +53,7 @@ class MechanicServiceTest {
     @Test
     @Disabled
     void e_delete() {
-        mechanicService.delete(mechanic.getMechanicId());
+        mechanicService.delete(mechanic.getEmployeeNumber());
         System.out.println("Successfully deleted mechanic");
     }
 

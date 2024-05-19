@@ -30,8 +30,8 @@ public class MechanicService implements IMechanicService {
     }
 
     @Override
-    public Mechanic read(Integer mechanicId) {
-        return this.mechanicRepository.findById(mechanicId).orElse(null);
+    public Mechanic read(String employeeNumber) {
+        return this.mechanicRepository.findById(employeeNumber).orElse(null);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class MechanicService implements IMechanicService {
     }
 
     @Override
-    public void delete(Integer mechanicId) {
-        mechanicRepository.deleteById(mechanicId);
+    public void delete(String employeeNumber) {
+        mechanicRepository.deleteById(employeeNumber);
     }
 
     @Override

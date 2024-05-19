@@ -13,5 +13,5 @@ import za.ac.cput.domain.Mechanic;
  * Date: 16 May 2024
  */
 @Repository
-public interface MechanicRepository extends JpaRepository<Mechanic,Integer> {
+public interface MechanicRepository extends JpaRepository<Mechanic,String> {
 }
