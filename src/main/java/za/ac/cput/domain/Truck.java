@@ -5,8 +5,7 @@ import java.util.Objects;
 
 /**
  *Truck.java
- * This is Truck Domain program
- * @aurthor Ayanda Phumzile Khoza (218057172)
+ * Ayanda Phumzile Khoza (218057172)
  * Date: 07 May 2024
  * */
 @Entity
@@ -61,8 +60,8 @@ public class Truck {
         return availability;
     }
 
-    public double getTruckLength() {
-        return truckLength;
+    public int getTruckLength() {
+        return (int) truckLength;
     }
 
     public double getTruckWeight() {

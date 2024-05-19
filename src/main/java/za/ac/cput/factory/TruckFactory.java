@@ -13,22 +13,25 @@ public class TruckFactory {
         if (Helper.isNullOrEmpty(vin) ||
                 Helper.isNullOrEmpty(model) || Helper.isNullOrEmpty(year) ||
                 Helper.isNullOrEmpty(truckType) || !Helper.isValidEmail(String.valueOf(availability)) ||
-                Helper.isNullOrEmpty(String.valueOf(truckLength)))
+                Helper.isDoubleNotNull(truckLength) || Helper.isDoubleNotNull(truckWeight) || Helper.isDoubleNotNull(truckMaxHeight)
+                || Helper.isDoubleNotNull(currentMileage)) {
             return null;
 
-        return new Truck.Builder()
-                .setVin(vin)
-                .setModel(model)
-                .setYear(year)
-                .setTruckType(truckType)
-                .setAvailability(availability)
-                .setTruckLength(truckLength)
-                .setTruckWeight(truckWeight)
-                .setTruckMaxHeight(truckMaxHeight)
-                .setCurrentMileage(currentMileage)
-                .build();
-    }
+        }
+                return new Truck.Builder()
+                        .setVin(vin)
+                        .setModel(model)
+                        .setYear(year)
+                        .setTruckType(truckType)
+                        .setAvailability(availability)
+                        .setTruckLength(truckLength)
+                        .setTruckWeight(truckWeight)
+                        .setTruckMaxHeight(truckMaxHeight)
+                        .setCurrentMileage(currentMileage)
+                        .build();
+            }
 
-}
+        }
+
 
 
