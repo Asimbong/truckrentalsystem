@@ -1,6 +1,7 @@
 package za.ac.cput.service;
 
 import za.ac.cput.domain.Customer;
+import za.ac.cput.domain.RentTruck;
 
 import java.util.Set;
 
@@ -12,5 +13,7 @@ import java.util.Set;
  */
 
 public interface ICustomerService extends IService<Customer,Integer>{
+
+    Customer update(Customer customer);
     Set<Customer> getAll();
 }

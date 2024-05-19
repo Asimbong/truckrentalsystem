@@ -11,13 +11,14 @@ import za.ac.cput.util.Helper;
  */
 public class CustomerFactory {
     public static Customer buildCustomer(int customerID, String firstName, String lastName, String email, char license, String cellNo, int rentalID) {
-        if ((customerID <= 0) ||
+        if (
+                Helper.isIntNotValid(customerID) ||
                 Helper.isNullOrEmpty(firstName) ||
                 Helper.isNullOrEmpty(lastName) ||
                 Helper.isNullOrEmpty(email) || !Helper.isValidEmail(email) ||
                 Helper.isNullOrEmpty(String.valueOf(license)) ||
                 Helper.isNullOrEmpty(cellNo) ||
-                (rentalID <= 0))
+                Helper.isIntNotValid(rentalID))
 
             return null;
         return new Customer.Builder().setCustomerID(customerID)
