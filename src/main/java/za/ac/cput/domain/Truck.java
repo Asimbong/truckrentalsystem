@@ -5,12 +5,11 @@ import java.util.Objects;
 
 /**
  *Truck.java
- * This is Truck Domain program
- * @aurthor Ayanda Phumzile Khoza (218057172)
+ * Ayanda Phumzile Khoza (218057172)
  * Date: 07 May 2024
  * */
 @Entity
-public class Truck {
+public class Truck extends Manager {
     @Id
     private String vin;
     private String model;
