@@ -8,6 +8,8 @@ import java.util.Set;
  * */
 
 public interface ITruckService extends IService<Truck,Integer>{
+
     Truck update(Truck truck);
+
     Set<Truck> getAll();
 }

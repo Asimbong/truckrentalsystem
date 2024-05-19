@@ -9,7 +9,7 @@ import java.util.Objects;
  * Date: 07 May 2024
  * */
 @Entity
-public class Truck extends Manager {
+public class Truck {
     @Id
     private String vin;
     private String model;
@@ -60,8 +60,8 @@ public class Truck extends Manager {
         return availability;
     }
 
-    public double getTruckLength() {
-        return truckLength;
+    public int getTruckLength() {
+        return (int) truckLength;
     }
 
     public double getTruckWeight() {

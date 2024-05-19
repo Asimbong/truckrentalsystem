@@ -7,15 +7,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 /**
  *Truck.java
- * This is Truck Domain program
  * Ayanda Phumzile Khoza (218057172)
  * Date: 18 May 2024
         * */
 
 @Service
 public class TruckService implements ITruckService {
-    private final za.ac.cput.repository.TruckRepository truckRepository;
-    private TruckRepository TruckRepository;
+    private TruckRepository truckRepository;
 
     @Autowired
     TruckService(TruckRepository truckRepository) {
@@ -28,8 +26,8 @@ public class TruckService implements ITruckService {
     }
 
     @Override
-    public Truck read(double truckID) {
-        return this.truckRepository.findById((int) truckID).orElse(null);
+    public Truck read(Integer truckID) {
+        return this.truckRepository.findById(truckID).orElse(null);
     }
 
     @Override
@@ -38,8 +36,8 @@ public class TruckService implements ITruckService {
     }
 
     @Override
-    public void delete(double truckID) {
-        truckRepository.deleteById((int) truckID);
+    public void delete(Integer truckID) {
+        truckRepository.deleteById(truckID);
     }
 
     @Override

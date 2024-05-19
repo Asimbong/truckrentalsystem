@@ -1,15 +1,17 @@
 package za.ac.cput.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import za.ac.cput.domain.Manager;
 import za.ac.cput.domain.Truck;
 
 /**
  *Truck.java
  * This is Truck Domain program
- * @aurthor Ayanda Phumzile Khoza (218057172)
+ * Ayanda Phumzile Khoza (218057172)
  * Date: 07 May 2024
  * */
-
-public  interface ManagerRepository extends JpaRepository<Truck, Integer> {
+@Repository
+public  interface ManagerRepository extends JpaRepository<Manager, String> {
 }
 
 

@@ -5,11 +5,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import za.ac.cput.domain.Insurance;
 import za.ac.cput.domain.Truck;
 import za.ac.cput.factory.TruckFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+/**
+ *Truck.java
+ * Ayanda Phumzile Khoza (218057172)
+ * Date: 07 May 2024
+ * */
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest
