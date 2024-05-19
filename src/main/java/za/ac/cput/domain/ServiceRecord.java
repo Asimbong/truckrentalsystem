@@ -14,7 +14,6 @@ import java.util.Objects;
 public class ServiceRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private  int serviceID;
     private  LocalDate serviceDate;
     private   String serviceType;
