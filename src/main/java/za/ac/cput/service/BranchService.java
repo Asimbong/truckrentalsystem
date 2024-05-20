@@ -17,25 +17,13 @@ import java.util.List;
 @Service
 public class BranchService implements IBranchService{
 
-    private static IBranchService service = null;
+    @Autowired
     private BranchRepository branchRepository;
 
-    private BranchService () {
-
-    }
-
-    public static IBranchService getService() {
-        if (service == null) {
-            service = new BranchService();
-        }
-        return null;
-    }
-
-    @Autowired
-    BranchService(BranchRepository branchRepository){
-        this.branchRepository = branchRepository;
-    }
-
+//    @Autowired
+//    BranchService(BranchRepository branchRepository){
+//        this.branchRepository = branchRepository;
+//    }
 
     @Override
     public Branch create(Branch branch) {
