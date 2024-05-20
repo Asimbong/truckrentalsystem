@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class ServiceRecordServiceTest {
     @Autowired
     private ServiceRecordService serviceRecordService;
-    private ServiceRecord serviceRecord = ServiceRecordFactory.buildServiceRecord(0242401, LocalDate.of(2024, 3, 25), "Normal Service", "Oil Change ect...",
+    private ServiceRecord serviceRecord = ServiceRecordFactory.buildServiceRecord(1, LocalDate.of(2024, 3, 25), "Normal Service", "Oil Change ect...",
             5000, "Micheal Scott", LocalDate.of(2024, 6, 25), "123FG73287TY2");
 
     @Test

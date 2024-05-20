@@ -26,28 +26,35 @@ class RentTruckServiceTest {
     private RentTruckService rentTruckService;
     @Autowired
     private BranchRepository repository;
-    private Branch existingBranch1 = repository.findById(3701).get();
-    private Branch existingBranch2 = repository.findById(3702).get();
-    private RentTruck rentTruck1 = RentTruckFactory.buildRentTruck(1432,
-                LocalDate.of(2024, 05, 14),
-                LocalDate.of(2024, 05, 19),
-                8006.0, 321, existingBranch1.getBranchId(),
-                 existingBranch1.getAddress(),
-                 existingBranch1.getCity(),
-                 existingBranch1.getProvince(),
-                 existingBranch1.getCountry());
+    private Branch existingBranch1;
+    private Branch existingBranch2;
+    private RentTruck rentTruck1;
+    private RentTruck rentTruck2;
+    @BeforeEach
+    void setUp() {
+        existingBranch1 = repository.findById(3701).orElse(null);
+        existingBranch2 = repository.findById(3702).orElse(null);
 
-    private RentTruck rentTruck2 = RentTruckFactory.buildRentTruck(1452,
-                LocalDate.of(2024, 04, 14),
-                LocalDate.of(2024, 05, 19),
+        rentTruck1 = RentTruckFactory.buildRentTruck(1432,
+                LocalDate.of(2024, 5, 14),
+                LocalDate.of(2024, 5, 19),
+                8006.0, 321, existingBranch1.getBranchId(),
+                existingBranch1.getAddress(),
+                existingBranch1.getCity(),
+                existingBranch1.getProvince(),
+                existingBranch1.getCountry());
+
+        rentTruck2 = RentTruckFactory.buildRentTruck(1452,
+                LocalDate.of(2024, 4, 14),
+                LocalDate.of(2024, 5, 19),
                 17687.0, 322, existingBranch2.getBranchId(),
                 existingBranch2.getAddress(),
                 existingBranch2.getCity(),
                 existingBranch2.getProvince(),
                 existingBranch2.getCountry());
+    }
 
-
-    @Order(2)
+    @Order(1)
     @Test
     void create() {
         RentTruck created1 = rentTruckService.create(rentTruck1);
@@ -59,7 +66,7 @@ class RentTruckServiceTest {
 //        System.out.println(created2);
     }
 
-    @Order(3)
+    @Order(2)
     @Test
     void read() {
         RentTruck read = rentTruckService.read(rentTruck1.getRentId());
@@ -67,7 +74,7 @@ class RentTruckServiceTest {
 //        System.out.println(read);
     }
 
-    @Order(4)
+    @Order(3)
     @Test
     void update() {
         RentTruck newRent =new RentTruck.Builder().copy(rentTruck2)
@@ -77,13 +84,13 @@ class RentTruckServiceTest {
 //        System.out.println(updatedRent);
     }
 
-    @Order(5)
+    @Order(4)
     @Test
     @Disabled
     void delete() {
     }
 
-    @Order(6)
+    @Order(5)
     @Test
     void getAll() {
         System.out.println(rentTruckService.getAll());
