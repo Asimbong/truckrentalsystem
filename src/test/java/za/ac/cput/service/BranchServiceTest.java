@@ -21,23 +21,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class BranchServiceTest {
     @Autowired
     private BranchService branchService;
-    private static Branch branch1;
-    private static Branch branch2;
 
-    @Test
-    void setUp() {
-        branch1 = BranchFactory.buildBranch(3701,
-                "10 Dorset St", "Cape Town", "Western Cape",
-                "South Africa");
-        assertNotNull(branch1);
-        System.out.println(branch1);
+    private Branch branch1 = BranchFactory.buildBranch(3701,
+            "10 Dorset St", "Cape Town", "Western Cape",
+            "South Africa");
 
-        branch2 = BranchFactory.buildBranch(3702,
-                "56 Ekunqobeni St", "Maphumulo", "KwaZulu-Natal",
-                "South Africa");
-        assertNotNull(branch2);
-        System.out.println(branch2);
-    }
+    private Branch branch2 = BranchFactory.buildBranch(3702,
+            "56 Ekunqobeni St", "Maphumulo", "KwaZulu-Natal",
+            "South Africa");
+
 
     @Test
     void create() {
@@ -54,7 +46,7 @@ class BranchServiceTest {
     void read() {
         Branch read = branchService.read(branch1.getBranchId());
         assertNotNull(read);
-        System.out.println(read);
+//        System.out.println("read: " + read);
     }
 
     @Test

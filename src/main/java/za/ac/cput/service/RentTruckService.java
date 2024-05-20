@@ -17,24 +17,13 @@ import java.util.List;
 @Service
 public class RentTruckService implements IRentTruckService{
 
-    private static IRentTruckService service = null;
+    @Autowired
     private RentTruckRepository rentTruckRepository;
 
-    private RentTruckService () {
-
-    }
-
-    public static IRentTruckService getService() {
-        if (service == null) {
-            service = new RentTruckService();
-        }
-        return null;
-    }
-
-    @Autowired
-    RentTruckService(RentTruckRepository rentTruckRepository){
-        this.rentTruckRepository = rentTruckRepository;
-    }
+//    @Autowired
+//    RentTruckService(RentTruckRepository rentTruckRepository){
+//        this.rentTruckRepository = rentTruckRepository;
+//    }
 
 
     @Override
