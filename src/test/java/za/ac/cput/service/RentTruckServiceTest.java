@@ -92,7 +92,7 @@ class RentTruckServiceTest {
 
     @Order(5)
     @Test
-    void getAll() {
-        System.out.println(rentTruckService.getAll());
+    void getAll(){
+    rentTruckService.getAll();
     }
 }
